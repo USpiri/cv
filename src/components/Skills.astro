@@ -1,1 +1,28 @@
-<h2 class="text-xl font-bold">Skills</h2>
+---
+const skills = [
+  "Angular",
+  "Typescript",
+  "Tailwind",
+  "HTML",
+  "CSS",
+  "Astro",
+  "Bootstraap",
+  "NodeJs",
+  "NestJs",
+];
+---
+
+<section class="flex flex-col gap-4">
+  <h2 class="text-xl font-bold">Skills</h2>
+  <ul class="flex flex-wrap justify-center gap-4">
+    {
+      skills.map((skill) => (
+        <li>
+          <article class="rounded-md bg-neutral-500/10 px-2 py-0.5 text-sm font-medium">
+            {skill}
+          </article>
+        </li>
+      ))
+    }
+  </ul>
+</section>
