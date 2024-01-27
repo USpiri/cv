@@ -1,6 +1,7 @@
 ---
 import type { Experience } from "@models/experience.interface";
 import Badge from "./Badge.astro";
+import ExternalIcon from "./icons/ExternalIcon.astro";
 
 interface Props {
   experience: Experience;
@@ -11,10 +12,24 @@ const { experience } = Astro.props;
 
 <article class="flex flex-col gap-1">
   <div class="flex items-center justify-between">
-    <h3 class="text-lg font-semibold leading-none">
-      <a href="/">{experience.company}</a>
+    <header class="flex flex-wrap items-center gap-1">
+      <h3 class="mr-1 text-lg font-semibold">
+        {
+          experience.url ? (
+            <a
+              href={experience.url}
+              class="group flex items-center gap-0.5 hover:underline"
+            >
+              {experience.company}
+              <ExternalIcon class="inline h-3 fill-neutral-500/80 transition-transform group-hover:scale-125" />
+            </a>
+          ) : (
+            experience.company
+          )
+        }
+      </h3>
       {experience.type && <Badge label={experience.type} size="xs" />}
-    </h3>
+    </header>
     <span class="text-sm tabular-nums text-neutral-500">
       {experience.date}
     </span>
