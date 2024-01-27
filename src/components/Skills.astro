@@ -1,4 +1,5 @@
 ---
+import Badge from "@components/Badge.astro";
 const skills = [
   "Angular",
   "Typescript",
@@ -17,10 +18,8 @@ const skills = [
   <ul class="flex flex-wrap justify-center gap-4">
     {
       skills.map((skill) => (
-        <li>
-          <article class="rounded-md bg-neutral-500/10 px-2 py-0.5 text-sm font-medium">
-            {skill}
-          </article>
+        <li class="select-none transition-all duration-100 hover:scale-105">
+          <Badge label={skill} size="sm" />
         </li>
       ))
     }
