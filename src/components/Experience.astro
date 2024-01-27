@@ -1,5 +1,7 @@
 ---
 import Badge from "./Badge.astro";
+import ExperienceCard from "./ExperienceCard.astro";
+
 const experiences = [
   {
     id: "1",
@@ -38,21 +40,7 @@ const experiences = [
     {
       experiences.map((experience) => (
         <li>
-          <article class="flex flex-col gap-1">
-            <div class="flex items-center justify-between">
-              <h3 class="text-lg font-semibold leading-none">
-                <a href="/">{experience.company}</a>
-                <Badge label={experience.type} size="xs" />
-              </h3>
-              <span class="text-sm tabular-nums text-neutral-500">
-                {experience.date}
-              </span>
-            </div>
-            <p class="text-sm font-medium">{experience.job}</p>
-            <p class="text-pretty leading-5 text-neutral-500">
-              {experience.description}
-            </p>
-          </article>
+          <ExperienceCard experience={experience} />
         </li>
       ))
     }
