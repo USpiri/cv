@@ -42,11 +42,11 @@ const experiences = [
             <div class="flex items-center justify-between">
               <h3 class="text-lg font-semibold leading-none">
                 <a href="/">{experience.company}</a>
-                <Badge label={experience.type} size="xs" />
-                <span class="rounded-md bg-neutral-500/10 px-1 py-0.5 text-xs font-medium">
-                  {experience.type}
-                </span>
+                <Badge label={experience.type} />
               </h3>
+              <span class="text-sm tabular-nums text-neutral-500">
+                {experience.date}
+              </span>
             </div>
             <p class="text-sm font-medium">{experience.job}</p>
             <p class="text-pretty leading-5 text-neutral-500">
