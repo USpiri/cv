@@ -9,8 +9,8 @@
       "@styles/*": ["styles/*"],
       "@assets/*": ["assets/*"],
       "@utils/*": ["utils/*"],
+      "@models/*": ["models/*"],
     },
     "jsx": "preserve",
   },
 }
-
