@@ -1,76 +1,60 @@
+---
+import Badge from "./Badge.astro";
+const experiences = [
+  {
+    id: "1",
+    type: "Remote",
+    date: "2022 - Actually",
+    company: "Nenes/Notimation",
+    url: "https://nenes.io/es",
+    job: "Angular Developer → Lead Angular Developer",
+    description:
+      "Lead an Angular team, manage project and develop front-end applications with Angular, Angular Material, PrimeNg, etc.",
+  },
+  {
+    id: "2",
+    type: "Remote",
+    date: "2023",
+    company: "Momento Mate",
+    job: "Web developer",
+    description:
+      "Built a custom website as a freelancer for a podcast/streaming group, managed the site's content and maintained it.",
+  },
+  {
+    id: "3",
+    type: "Remote",
+    date: "2020 - 2021",
+    company: "Spixel",
+    job: "Entrepreneur",
+    description:
+      "Entrepreneurship management, expenses and sales control, network management, etc.",
+  },
+];
+---
+
 <section class="flex flex-col gap-5">
   <h2 class="text-xl font-bold">Experience</h2>
   <ul class="flex flex-col gap-5">
-    <li>
-      <article class="flex flex-col gap-1">
-        <div class="flex items-center justify-between">
-          <h3 class="text-lg font-semibold leading-none">
-            <a href="/"> Nenes/Notimation </a>
-            <span
-              class="rounded-md bg-neutral-500/10 px-1 py-0.5 text-xs font-medium"
-              >Remote</span
-            >
-          </h3>
-          <span class="text-sm tabular-nums text-neutral-500"
-            >2022 - Actually</span
-          >
-        </div>
-        <p class="text-sm font-medium">
-          Angular Developer → Lead Angular Developer
-        </p>
-        <p class="text-pretty leading-5 text-neutral-500">
-          Lead an Angular team, manage project, maintain and develop Angular
-          applications with the latest version of Angular, Material, Bootstap,
-          etc.
-        </p>
-      </article>
-    </li><li>
-      <article class="flex flex-col gap-1">
-        <div class="flex items-center justify-between">
-          <h3 class="text-lg font-semibold leading-none">
-            <a href="/"> Nenes/Notimation </a>
-            <span
-              class="rounded-md bg-neutral-500/10 px-1 py-0.5 text-xs font-medium"
-              >Remote</span
-            >
-          </h3>
-          <span class="text-sm tabular-nums text-neutral-500"
-            >2022 - Actually</span
-          >
-        </div>
-        <p class="text-sm font-medium">
-          Angular Developer → Lead Angular Developer
-        </p>
-        <p class="text-pretty leading-5 text-neutral-500">
-          Lead an Angular team, manage project, maintain and develop Angular
-          applications with the latest version of Angular, Material, Bootstap,
-          etc.
-        </p>
-      </article>
-    </li>
-    <li>
-      <article class="flex flex-col gap-1">
-        <div class="flex items-center justify-between">
-          <h3 class="text-lg font-semibold leading-none">
-            <a href="/"> Nenes/Notimation </a>
-            <span
-              class="rounded-md bg-neutral-500/10 px-1 py-0.5 text-xs font-medium"
-              >Remote</span
-            >
-          </h3>
-          <span class="text-sm tabular-nums text-neutral-500"
-            >2022 - Actually</span
-          >
-        </div>
-        <p class="text-sm font-medium">
-          Angular Developer → Lead Angular Developer
-        </p>
-        <p class="text-pretty leading-5 text-neutral-500">
-          Lead an Angular team, manage project, maintain and develop Angular
-          applications with the latest version of Angular, Material, Bootstap,
-          etc.
-        </p>
-      </article>
-    </li>
+    {
+      experiences.map((experience) => (
+        <li>
+          <article class="flex flex-col gap-1">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold leading-none">
+                <a href="/">{experience.company}</a>
+                <Badge label={experience.type} size="xs" />
+                <span class="rounded-md bg-neutral-500/10 px-1 py-0.5 text-xs font-medium">
+                  {experience.type}
+                </span>
+              </h3>
+            </div>
+            <p class="text-sm font-medium">{experience.job}</p>
+            <p class="text-pretty leading-5 text-neutral-500">
+              {experience.description}
+            </p>
+          </article>
+        </li>
+      ))
+    }
   </ul>
 </section>
