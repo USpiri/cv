@@ -1,0 +1,14 @@
+---
+interface Props {
+  label: string;
+  size?: "xs" | "sm" | "base";
+}
+
+const { size = "base", label } = Astro.props;
+---
+
+<span
+  class={`text-${size} rounded-md bg-neutral-500/10 px-2 py-0.5 font-medium`}
+>
+  {label}
+</span>
