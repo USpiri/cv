@@ -1,0 +1,62 @@
+---
+import type { Project } from "@models/project.interface";
+import Badge from "./Badge.astro";
+import LinkButton from "./LinkButton.astro";
+import GlobeIcon from "./icons/GlobeIcon.astro";
+import GithubIcon from "./icons/GithubIcon.astro";
+import ExternalIcon from "./icons/ExternalIcon.astro";
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<article class="flex flex-col gap-2 rounded-md border px-3 py-2">
+  <header class="flex flex-wrap items-center gap-1">
+    <h3 class="mr-1 text-lg font-semibold">
+      {
+        project.url ? (
+          <a
+            href={project.url}
+            class="group flex items-center gap-0.5 hover:underline"
+          >
+            {project.title}
+            <ExternalIcon class="inline h-3 fill-neutral-500/80 transition-transform group-hover:scale-125" />
+          </a>
+        ) : (
+          project.title
+        )
+      }
+    </h3>
+    <ul class="flex gap-2">
+      {
+        project.tags.map((tag) => (
+          <li>
+            <Badge label={tag} size="xs" />
+          </li>
+        ))
+      }
+    </ul>
+  </header>
+  <p class="text-pretty text-sm leading-5 text-neutral-500">
+    {project.description}
+  </p>
+  <footer class="flex gap-2">
+    {
+      project.url && (
+        <LinkButton href={project.url}>
+          <GlobeIcon class="h-4 w-4 fill-neutral-500/80 transition-transform group-hover:scale-110" />
+        </LinkButton>
+      )
+    }
+    {
+      project.repo && (
+        <LinkButton href={project.repo}>
+          <GithubIcon class="h-4 w-4 fill-neutral-500/80 transition-transform group-hover:scale-110" />
+        </LinkButton>
+      )
+    }
+  </footer>
+</article>
