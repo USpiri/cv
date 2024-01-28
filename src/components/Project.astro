@@ -13,7 +13,9 @@ interface Props {
 const { project } = Astro.props;
 ---
 
-<article class="flex flex-col gap-2 rounded-md border px-3 py-2">
+<article
+  class="flex flex-col gap-2 rounded-md border px-3 py-2 print:border-none print:px-0"
+>
   <header class="flex flex-wrap items-center gap-1">
     <h3 class="mr-1 text-lg font-semibold">
       {
@@ -23,7 +25,7 @@ const { project } = Astro.props;
             class="group flex items-center gap-0.5 hover:underline"
           >
             {project.title}
-            <ExternalIcon class="inline h-3 fill-neutral-500/80 transition-transform group-hover:scale-125" />
+            <ExternalIcon class="inline h-3 fill-neutral-500/80 transition-transform group-hover:scale-125 print:hidden" />
           </a>
         ) : (
           project.title
@@ -43,20 +45,25 @@ const { project } = Astro.props;
   <p class="text-pretty text-sm leading-5 text-neutral-500">
     {project.description}
   </p>
-  <footer class="flex gap-2">
-    {
-      project.url && (
-        <LinkButton href={project.url}>
-          <GlobeIcon class="h-4 w-4 fill-neutral-500/80 transition-transform group-hover:scale-110" />
-        </LinkButton>
-      )
-    }
-    {
-      project.repo && (
-        <LinkButton href={project.repo}>
-          <GithubIcon class="h-4 w-4 fill-neutral-500/80 transition-transform group-hover:scale-110" />
-        </LinkButton>
-      )
-    }
+  <footer>
+    <div class="flex gap-2 print:hidden">
+      {
+        project.url && (
+          <LinkButton href={project.url}>
+            <GlobeIcon class="h-4 w-4 fill-neutral-500/80 transition-transform group-hover:scale-110" />
+          </LinkButton>
+        )
+      }
+      {
+        project.repo && (
+          <LinkButton href={project.repo}>
+            <GithubIcon class="h-4 w-4 fill-neutral-500/80 transition-transform group-hover:scale-110" />
+          </LinkButton>
+        )
+      }
+    </div>
+    <div class="hidden print:block">
+      {project.url && <span>{project.url}</span>}
+    </div>
   </footer>
 </article>
