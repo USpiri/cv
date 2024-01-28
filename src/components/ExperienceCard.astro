@@ -21,7 +21,7 @@ const { experience } = Astro.props;
               class="group flex items-center gap-0.5 hover:underline"
             >
               {experience.company}
-              <ExternalIcon class="inline h-3 fill-neutral-500/80 transition-transform group-hover:scale-125" />
+              <ExternalIcon class="inline h-3 fill-neutral-500/80 transition-transform group-hover:scale-125 print:hidden" />
             </a>
           ) : (
             experience.company
