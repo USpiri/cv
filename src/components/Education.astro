@@ -1,6 +1,7 @@
 ---
 import type { Education } from "@models/education.interface";
 import EducationCard from "./EducationCard.astro";
+import Section from "./Section.astro";
 
 const education: Education[] = [
   {
@@ -21,8 +22,7 @@ const education: Education[] = [
 ];
 ---
 
-<section class="flex flex-col gap-5">
-  <h2 class="text-xl font-bold">Education</h2>
+<Section title="Education">
   <ul class="flex flex-col gap-5">
     {
       education.map((item) => (
@@ -32,4 +32,4 @@ const education: Education[] = [
       ))
     }
   </ul>
-</section>
+</Section>

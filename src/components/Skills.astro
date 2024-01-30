@@ -1,5 +1,6 @@
 ---
 import Badge from "@components/Badge.astro";
+import Section from "./Section.astro";
 const skills = [
   "Angular",
   "Typescript",
@@ -13,8 +14,7 @@ const skills = [
 ];
 ---
 
-<section class="force-new-page flex flex-col gap-4">
-  <h2 class="text-xl font-bold">Skills</h2>
+<Section title="Skills">
   <ul class="flex flex-wrap justify-center gap-4">
     {
       skills.map((skill) => (
@@ -24,4 +24,4 @@ const skills = [
       ))
     }
   </ul>
-</section>
+</Section>

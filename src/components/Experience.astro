@@ -1,5 +1,6 @@
 ---
 import ExperienceCard from "./ExperienceCard.astro";
+import Section from "./Section.astro";
 
 const experiences = [
   {
@@ -33,8 +34,7 @@ const experiences = [
 ];
 ---
 
-<section class="flex flex-col gap-5">
-  <h2 class="text-xl font-bold">Experience</h2>
+<Section title="Experience">
   <ul class="flex flex-col gap-5">
     {
       experiences.map((experience) => (
@@ -44,4 +44,4 @@ const experiences = [
       ))
     }
   </ul>
-</section>
+</Section>

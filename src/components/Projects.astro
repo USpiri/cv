@@ -1,6 +1,7 @@
 ---
 import type { Project as ProjectI } from "@models/project.interface";
 import Project from "./Project.astro";
+import Section from "./Section.astro";
 
 const projects: ProjectI[] = [
   {
@@ -58,9 +59,8 @@ const projects: ProjectI[] = [
 ];
 ---
 
-<section class="flex flex-col gap-5">
-  <h2 class="text-xl font-bold">Projects</h2>
-  <ul class="flex flex-col gap-4">
+<Section title="Projects">
+  <ul class="flex flex-col gap-5">
     {
       projects.map((project) => (
         <li>
@@ -69,4 +69,4 @@ const projects: ProjectI[] = [
       ))
     }
   </ul>
-</section>
+</Section>
