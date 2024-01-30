@@ -13,17 +13,19 @@ const { experience } = Astro.props;
 ---
 
 <article class="flex flex-col gap-0.5">
-  <div class="flex items-center justify-between">
-    <header class="flex flex-wrap items-center gap-2">
+  <header class="flex items-center justify-between">
+    <div class="flex flex-wrap items-center gap-2">
       <Title href={experience.url}>{experience.company}</Title>
       {experience.type && <Badge label={experience.type} size="xs" />}
-    </header>
+    </div>
     <span class="text-sm tabular-nums text-neutral-500">
       {experience.date}
     </span>
-  </div>
-  <Description>{experience.job}</Description>
-  <Paragraph>
-    {experience.description}
-  </Paragraph>
+  </header>
+  <footer class="flex flex-col gap-0.5">
+    <Description>{experience.job}</Description>
+    <Paragraph>
+      {experience.description}
+    </Paragraph>
+  </footer>
 </article>

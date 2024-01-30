@@ -11,9 +11,11 @@ const { education } = Astro.props;
 ---
 
 <article class="flex flex-col gap-0.5">
-  <div class="flex items-center justify-between">
+  <header class="flex items-center justify-between">
     <Title>{education.institute}</Title>
     <div class="text-sm tabular-nums text-gray-500">{education.date}</div>
-  </div>
-  <Description>{education.title}</Description>
+  </header>
+  <footer>
+    <Description>{education.title}</Description>
+  </footer>
 </article>
