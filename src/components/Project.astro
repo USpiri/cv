@@ -4,8 +4,8 @@ import Badge from "./Badge.astro";
 import LinkButton from "./LinkButton.astro";
 import GlobeIcon from "./icons/GlobeIcon.astro";
 import GithubIcon from "./icons/GithubIcon.astro";
-import ExternalIcon from "./icons/ExternalIcon.astro";
 import Paragraph from "./Paragraph.astro";
+import Title from "./Title.astro";
 
 interface Props {
   project: Project;
@@ -15,24 +15,10 @@ const { project } = Astro.props;
 ---
 
 <article
-  class="flex flex-col gap-2 rounded-md border px-3 py-2 print:gap-1 print:border-none print:px-0"
+  class="flex flex-col gap-2 rounded-md border px-3 py-2 print:gap-1 print:border-none print:px-0 print:py-0"
 >
-  <header class="flex flex-wrap items-center gap-1">
-    <h3 class="mr-1 text-lg font-semibold">
-      {
-        project.url ? (
-          <a
-            href={project.url}
-            class="group flex items-center gap-0.5 hover:underline"
-          >
-            {project.title}
-            <ExternalIcon class="inline h-3 fill-neutral-500/80 transition-transform group-hover:scale-125 print:hidden" />
-          </a>
-        ) : (
-          project.title
-        )
-      }
-    </h3>
+  <header class="flex flex-wrap items-center gap-2">
+    <Title href={project.url}>{project.title}</Title>
     <ul class="flex gap-2">
       {
         project.tags.map((tag) => (

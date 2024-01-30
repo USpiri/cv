@@ -1,9 +1,9 @@
 ---
 import type { Experience } from "@models/experience.interface";
 import Badge from "./Badge.astro";
-import ExternalIcon from "./icons/ExternalIcon.astro";
 import Paragraph from "./Paragraph.astro";
 import Description from "./Description.astro";
+import Title from "./Title.astro";
 
 interface Props {
   experience: Experience;
@@ -14,22 +14,8 @@ const { experience } = Astro.props;
 
 <article class="flex flex-col gap-0.5">
   <div class="flex items-center justify-between">
-    <header class="flex flex-wrap items-center gap-1">
-      <h3 class="mr-1 text-lg font-semibold">
-        {
-          experience.url ? (
-            <a
-              href={experience.url}
-              class="group flex items-center gap-0.5 hover:underline"
-            >
-              {experience.company}
-              <ExternalIcon class="inline h-3 fill-neutral-500/80 transition-transform group-hover:scale-125 print:hidden" />
-            </a>
-          ) : (
-            experience.company
-          )
-        }
-      </h3>
+    <header class="flex flex-wrap items-center gap-2">
+      <Title href={experience.url}>{experience.company}</Title>
       {experience.type && <Badge label={experience.type} size="xs" />}
     </header>
     <span class="text-sm tabular-nums text-neutral-500">
