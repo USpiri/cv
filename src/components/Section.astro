@@ -1,12 +1,12 @@
 ---
 interface Props {
   title: string;
+  forceNewPage?: boolean;
 }
-const { title } = Astro.props;
+const { title, forceNewPage = false } = Astro.props;
 ---
 
-<section class="flex flex-col gap-5">
+<section class={`flex flex-col gap-5 ${forceNewPage && "force-new-page"}`}>
   <h2 class="text-xl font-bold">{title}</h2>
   <slot />
 </section>
-
