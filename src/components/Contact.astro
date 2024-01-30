@@ -4,6 +4,7 @@ import LinkedinIcon from "./icons/LinkedinIcon.astro";
 import MailIcon from "./icons/MailIcon.astro";
 import PhoneIcon from "./icons/PhoneIcon.astro";
 import XTwitterIcon from "./icons/XTwitterIcon.astro";
+import LinkButton from "./LinkButton.astro";
 
 const links = [
   {
@@ -29,13 +30,9 @@ const links = [
 <div class="flex items-center gap-2 pt-2 print:hidden">
   {
     links.map((link) => (
-      <a
-        href={link.href}
-        class="group rounded-md border border-neutral-300 p-2 transition-all hover:scale-105 hover:bg-neutral-500/5 active:scale-95"
-        aria-label="Social Media icon"
-      >
+      <LinkButton href={link.href} title={`${link.title} page`}>
         <link.icon class="h-4 w-4 fill-neutral-500 transition-colors group-hover:fill-neutral-700" />
-      </a>
+      </LinkButton>
     ))
   }
 </div>
