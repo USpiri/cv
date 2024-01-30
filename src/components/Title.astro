@@ -1,0 +1,22 @@
+---
+import ExternalIcon from "./icons/ExternalIcon.astro";
+
+interface Props {
+  href?: string;
+}
+
+const { href } = Astro.props;
+---
+
+<h3 class="text-lg font-semibold leading-none">
+  {
+    href ? (
+      <a href={href} class="group flex items-center gap-0.5 hover:underline">
+        <slot />
+        <ExternalIcon class="inline h-3 fill-neutral-500/80 transition-transform group-hover:scale-125 print:hidden" />
+      </a>
+    ) : (
+      <slot />
+    )
+  }
+</h3>
