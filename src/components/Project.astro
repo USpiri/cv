@@ -34,15 +34,20 @@ const { project } = Astro.props;
     <div class="flex gap-2 print:hidden">
       {
         project.url && (
-          <LinkButton href={project.url}>
-            <GlobeIcon class="h-4 w-4 fill-neutral-500/80 transition-transform group-hover:scale-110" />
+          <LinkButton href={project.url} title={`${project.title} link`}>
+            <span class="sr-only">{`${project.title} link`}</span>
+            <GlobeIcon class="h-4 w-4 fill-neutral-500 transition-colors group-hover:fill-neutral-700" />
           </LinkButton>
         )
       }
       {
         project.repo && (
-          <LinkButton href={project.repo}>
-            <GithubIcon class="h-4 w-4 fill-neutral-500/80 transition-transform group-hover:scale-110" />
+          <LinkButton
+            href={project.repo}
+            title={`${project.title} github repo`}
+          >
+            <span class="sr-only">{`${project.title} github repo`}</span>
+            <GithubIcon class="h-4 w-4 fill-neutral-500 transition-colors group-hover:fill-neutral-700" />
           </LinkButton>
         )
       }
