@@ -5,6 +5,7 @@ import LinkButton from "./LinkButton.astro";
 import GlobeIcon from "./icons/GlobeIcon.astro";
 import GithubIcon from "./icons/GithubIcon.astro";
 import ExternalIcon from "./icons/ExternalIcon.astro";
+import Paragraph from "./Paragraph.astro";
 
 interface Props {
   project: Project;
@@ -42,9 +43,7 @@ const { project } = Astro.props;
       }
     </ul>
   </header>
-  <p class="text-pretty text-sm leading-5 text-neutral-500">
-    {project.description}
-  </p>
+  <Paragraph>{project.description}</Paragraph>
   <footer>
     <div class="flex gap-2 print:hidden">
       {

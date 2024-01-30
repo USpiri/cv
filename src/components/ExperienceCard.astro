@@ -2,6 +2,7 @@
 import type { Experience } from "@models/experience.interface";
 import Badge from "./Badge.astro";
 import ExternalIcon from "./icons/ExternalIcon.astro";
+import Paragraph from "./Paragraph.astro";
 
 interface Props {
   experience: Experience;
@@ -35,7 +36,7 @@ const { experience } = Astro.props;
     </span>
   </div>
   <p class="text-sm font-medium">{experience.job}</p>
-  <p class="text-pretty leading-5 text-neutral-500">
+  <Paragraph>
     {experience.description}
-  </p>
+  </Paragraph>
 </article>
