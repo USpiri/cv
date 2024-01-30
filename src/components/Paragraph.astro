@@ -1,3 +1,11 @@
-<p class="text-pretty text-sm leading-5 text-neutral-500">
+---
+interface Props {
+  size?: "sm" | "base";
+}
+
+const { size = "sm" } = Astro.props;
+---
+
+<p class={`text-pretty text-${size} text-neutral-500`}>
   <slot />
 </p>
