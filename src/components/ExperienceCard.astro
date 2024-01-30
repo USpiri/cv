@@ -3,6 +3,7 @@ import type { Experience } from "@models/experience.interface";
 import Badge from "./Badge.astro";
 import ExternalIcon from "./icons/ExternalIcon.astro";
 import Paragraph from "./Paragraph.astro";
+import Description from "./Description.astro";
 
 interface Props {
   experience: Experience;
@@ -11,7 +12,7 @@ interface Props {
 const { experience } = Astro.props;
 ---
 
-<article class="flex flex-col gap-1">
+<article class="flex flex-col gap-0.5">
   <div class="flex items-center justify-between">
     <header class="flex flex-wrap items-center gap-1">
       <h3 class="mr-1 text-lg font-semibold">
@@ -35,7 +36,7 @@ const { experience } = Astro.props;
       {experience.date}
     </span>
   </div>
-  <p class="text-sm font-medium">{experience.job}</p>
+  <Description>{experience.job}</Description>
   <Paragraph>
     {experience.description}
   </Paragraph>

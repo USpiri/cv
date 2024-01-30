@@ -1,5 +1,6 @@
 ---
 import type { Education } from "@models/education.interface";
+import Description from "./Description.astro";
 
 interface Props {
   education: Education;
@@ -8,12 +9,12 @@ interface Props {
 const { education } = Astro.props;
 ---
 
-<article>
+<article class="flex flex-col gap-0.5">
   <div class="flex items-center justify-between">
     <h3 class="text-lg font-semibold leading-none">
       {education.institute}
     </h3>
     <div class="text-sm tabular-nums text-gray-500">{education.date}</div>
   </div>
-  <div class="mt-1 text-pretty text-sm">{education.title}</div>
+  <Description>{education.title}</Description>
 </article>
