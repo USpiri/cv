@@ -1,5 +1,9 @@
 export interface Education {
-  institute: string;
-  title: string;
-  date: string;
+  institution: string;
+  url: string;
+  area: string;
+  course: string;
+  studyType: string;
+  startDate: string;
+  endDate: string;
 }

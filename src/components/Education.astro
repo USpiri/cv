@@ -1,25 +1,7 @@
 ---
-import type { Education } from "@models/education.interface";
 import EducationCard from "./EducationCard.astro";
 import Section from "./Section.astro";
-
-const education: Education[] = [
-  {
-    institute: "Universidad Nacional de Córdoba (UNC)",
-    date: "2019 - Actually",
-    title: "Lic. Cs. Económicas",
-  },
-  {
-    institute: "Instituto Nacional de tecnología Industrial (INTI)",
-    date: "2018 - 2019",
-    title: "Full stack web developer",
-  },
-  {
-    institute: "Instituto Salesiano Pio X",
-    date: "2012 - 2017",
-    title: "Bachiller en Economía y Administración",
-  },
-];
+import { education } from "@cv/education.json";
 ---
 
 <Section title="Education">

@@ -7,15 +7,17 @@ interface Props {
   education: Education;
 }
 
-const { education } = Astro.props;
+const { institution, startDate, endDate, course } = Astro.props.education;
 ---
 
 <article class="flex flex-col gap-0.5">
   <header class="flex items-center justify-between">
-    <Title>{education.institute}</Title>
-    <div class="text-sm tabular-nums text-gray-500">{education.date}</div>
+    <Title>{institution}</Title>
+    <div class="text-sm tabular-nums text-gray-500">
+      {startDate} - {endDate}
+    </div>
   </header>
   <footer>
-    <Description>{education.title}</Description>
+    <Description>{course}</Description>
   </footer>
 </article>
