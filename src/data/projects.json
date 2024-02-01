@@ -2,7 +2,7 @@
   "projects": [
     {
       "name": "USpiri.com",
-      "description": "USpiri.com is a tri-web project for a comprehensive online presence, featuring three interconected projects. The portfolio, developed using angular 17 with Tailwind and incorporating Server-Side Rendering (SSR), serves as the central hub, dynamically loading the latest blog posts and personal information from the CV. The blog, powered by Astro, serves as a repository for my programming articles, offering a rich source of knowledge. Last, the CV page, providing a printable PDF version, housing crucial information embedded in the portfolio.",
+      "description": "Tri-web project for my online presence, featuring three interconected projects. The portfolio, developed using angular 17 with Tailwind and Server-Side Rendering (SSR), dynamically loading the latest blog posts and personal information. The blog, powered by Astro, repository for my programming articles, offering a source of knowledge. Last, the CV, providing a printable PDF version, housing information embedded in the portfolio.",
       "url": "https://uspiri.com/",
       "repo": "https://github.com/USpiri/uspiri.com",
       "tags": ["Angular", "Astro", "Tailwind", "SSR", "Typescript", "MDX"]
