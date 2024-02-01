@@ -10,6 +10,7 @@
       "@assets/*": ["assets/*"],
       "@utils/*": ["utils/*"],
       "@models/*": ["models/*"],
+      "@cv/*": ["data/*"],
     },
     "jsx": "preserve",
   },
