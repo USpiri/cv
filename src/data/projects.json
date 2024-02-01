@@ -1,0 +1,39 @@
+{
+  "projects": [
+    {
+      "name": "USpiri.com",
+      "description": "USpiri.com is a tri-web project for a comprehensive online presence, featuring three interconected projects. The portfolio, developed using angular 17 with Tailwind and incorporating Server-Side Rendering (SSR), serves as the central hub, dynamically loading the latest blog posts and personal information from the CV. The blog, powered by Astro, serves as a repository for my programming articles, offering a rich source of knowledge. Last, the CV page, providing a printable PDF version, housing crucial information embedded in the portfolio.",
+      "url": "https://uspiri.com/",
+      "repo": "https://github.com/USpiri/uspiri.com",
+      "tags": ["Angular", "Astro", "Tailwind", "SSR", "Typescript", "MDX"]
+    },
+    {
+      "name": "Raices Nativas",
+      "description": "Raíces Nativas is an exciting project in collaboration with biology students from the National University of Córdoba (UNC) to promote actively the conservation of native plant species from Córdoba, Argentina.",
+      "url": "https://raices-nativas.vercel.app/",
+      "repo": "https://github.com/USpiri/raices-nativas",
+      "tags": ["Angular", "Material", "Bootstrap"]
+    },
+    {
+      "name": "Devly CLI",
+      "description": " Devly CLI is an ongoing Rust-based project that assists in development process, providing valuable support for the implementation of Conventional Commits standards. Currently I use this application daily.",
+      "url": "",
+      "repo": "https://github.com/USpiri/devly",
+      "tags": ["Rust"]
+    },
+    {
+      "name": "Todo CLI",
+      "description": "An efficient command-line program crafted in Rust, dedicated to local task management.",
+      "url": "",
+      "repo": "https://github.com/USpiri/todo",
+      "tags": ["Rust"]
+    },
+    {
+      "name": "Sticky Notes",
+      "description": "Sticky Notes represents one of my initial projects developed using Angular, offering a user-friendly notes management system that facilitates organization through tables and boards.",
+      "url": "https://simple-sticky-notes.web.app/",
+      "repo": "https://github.com/USpiri/StickyNotes",
+      "tags": ["Angular", "Angular SDK", "Local Storage"]
+    }
+  ]
+}
