@@ -1,9 +1,9 @@
 {
   "work": [
     {
-      "name": "Nenes/Notimation",
+      "company": "Nenes/Notimation",
       "location": "Buenos Aires, Argentina",
-      "description": "Lead an Angular development team, overseeing the end-to-end management of projects and actively contributing to the creation of front-end applications utilizing the latests version of Angular, Angular Material, PrimeNg, and Bootstrap. Successfully started the startup and execution of a innovative astro project dedicated to improving the company's documentation practices.",
+      "description": "Lead an Angular development team, management of projects and creation of front-end applications utilizing the latests version of Angular, Material, PrimeNg, and Bootstrap. Successfully started the startup and execution of a innovative astro project dedicated to improving the company's documentation practices.",
       "position": "Angular Developer → Lead Angular Developer",
       "url": "http://nenes.io/",
       "startDate": "2022",
@@ -12,7 +12,7 @@
       "highlights": []
     },
     {
-      "name": "Momento Mate",
+      "company": "Momento Mate",
       "location": "Córdoba, Argentina",
       "description": "Freelance project involved the complete development of a custom website for a podcast/streaming group, utilizing Astro for seamless performance and SEO optimization. Took charge of content management and ongoing maintenance to ensure optimal functionality and user experience.",
       "position": "Web Developer",
@@ -23,7 +23,7 @@
       "highlights": []
     },
     {
-      "name": "Spixel Prints",
+      "company": "Spixel Prints",
       "location": "Córdoba, Argentina",
       "description": "Entrepreneurship with strong emphasis on management, expense control, sales optimization and network administration. Outstanding in maintaining a commitment to customer satisfaction and product quality.",
       "position": "Entrepreneur",
