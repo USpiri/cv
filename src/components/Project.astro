@@ -11,17 +11,17 @@ interface Props {
   project: Project;
 }
 
-const { project } = Astro.props;
+const { url, name, tags, description, repo } = Astro.props.project;
 ---
 
 <article
   class="flex flex-col gap-2 rounded-md border px-3 py-2 print:gap-1 print:border-none print:px-0 print:py-0"
 >
   <header class="flex flex-wrap items-center gap-2">
-    <Title href={project.url}>{project.title}</Title>
+    <Title href={url}>{name}</Title>
     <ul class="flex gap-2">
       {
-        project.tags.map((tag) => (
+        tags.map((tag) => (
           <li>
             <Badge label={tag} size="xs" />
           </li>
@@ -29,31 +29,28 @@ const { project } = Astro.props;
       }
     </ul>
   </header>
-  <Paragraph>{project.description}</Paragraph>
+  <Paragraph>{description}</Paragraph>
   <footer>
     <div class="flex gap-2 print:hidden">
       {
-        project.url && (
-          <LinkButton href={project.url} title={`${project.title} link`}>
-            <span class="sr-only">{`${project.title} link`}</span>
+        url && (
+          <LinkButton href={url} title={`${name} link`}>
+            <span class="sr-only">{`${name} link`}</span>
             <GlobeIcon class="h-4 w-4 fill-neutral-500 transition-colors group-hover:fill-neutral-700" />
           </LinkButton>
         )
       }
       {
-        project.repo && (
-          <LinkButton
-            href={project.repo}
-            title={`${project.title} github repo`}
-          >
-            <span class="sr-only">{`${project.title} github repo`}</span>
+        repo && (
+          <LinkButton href={repo} title={`${name} github repo`}>
+            <span class="sr-only">{`${name} github repo`}</span>
             <GithubIcon class="h-4 w-4 fill-neutral-500 transition-colors group-hover:fill-neutral-700" />
           </LinkButton>
         )
       }
     </div>
     <div class="hidden print:block">
-      {project.url && <span>{project.url}</span>}
+      {url && <span>{url}</span>}
     </div>
   </footer>
 </article>
