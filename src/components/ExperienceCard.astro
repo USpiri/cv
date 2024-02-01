@@ -9,23 +9,24 @@ interface Props {
   experience: Experience;
 }
 
-const { experience } = Astro.props;
+const { url, company, startDate, endDate, description, position, remote } =
+  Astro.props.experience;
 ---
 
 <article class="flex flex-col gap-0.5">
   <header class="flex items-center justify-between">
     <div class="flex flex-wrap items-center gap-2">
-      <Title href={experience.url}>{experience.company}</Title>
-      {experience.type && <Badge label={experience.type} size="xs" />}
+      <Title href={url}>{company}</Title>
+      {remote && <Badge label="Remote" size="xs" />}
     </div>
     <span class="text-sm tabular-nums text-neutral-500">
-      {experience.date}
+      {startDate} - {endDate}
     </span>
   </header>
   <footer class="flex flex-col gap-0.5">
-    <Description>{experience.job}</Description>
+    <Description>{position}</Description>
     <Paragraph>
-      {experience.description}
+      {description}
     </Paragraph>
   </footer>
 </article>

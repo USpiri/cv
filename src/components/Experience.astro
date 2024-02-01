@@ -1,43 +1,13 @@
 ---
 import ExperienceCard from "./ExperienceCard.astro";
 import Section from "./Section.astro";
-
-const experiences = [
-  {
-    id: "1",
-    type: "Remote",
-    date: "2022 - Actually",
-    company: "Nenes/Notimation",
-    url: "https://nenes.io/es",
-    job: "Angular Developer → Lead Angular Developer",
-    description:
-      "Lead an Angular team, manage project and develop front-end applications with Angular, Angular Material, PrimeNg, etc.",
-  },
-  {
-    id: "2",
-    type: "Remote",
-    date: "2023",
-    company: "Momento Mate",
-    job: "Web developer",
-    description:
-      "Built a custom website as a freelancer for a podcast/streaming group, managed the site's content and maintained it.",
-  },
-  {
-    id: "3",
-    type: "Remote",
-    date: "2020 - 2021",
-    company: "Spixel",
-    job: "Entrepreneur",
-    description:
-      "Entrepreneurship management, expenses and sales control, network management, etc.",
-  },
-];
+import { work } from "@cv/experience.json";
 ---
 
 <Section title="Experience">
   <ul class="flex flex-col gap-5">
     {
-      experiences.map((experience) => (
+      work.map((experience) => (
         <li>
           <ExperienceCard experience={experience} />
         </li>
