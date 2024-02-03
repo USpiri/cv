@@ -7,6 +7,7 @@ import ExternalIcon from "./icons/ExternalIcon.astro";
 import Button from "./Button.astro";
 
 import user from "@cv/user.json";
+import CommandsIcon from "./icons/CommandsIcon.astro";
 
 const SOCIAL_ICONS: Record<string, string | any> = {
   Github,
@@ -56,9 +57,11 @@ const actions = [
 </footer>
 
 <div
-  class="fixed bottom-3 right-3 z-20 flex bg-neutral-50 sm:hidden print:hidden"
+  class="fixed bottom-8 right-8 z-20 flex bg-neutral-50 sm:hidden print:hidden"
 >
-  <Button id="command">✨</Button>
+  <Button id="command">
+    <CommandsIcon class="h-5 w-5 fill-neutral-500" />
+  </Button>
 </div>
 
 <dialog
