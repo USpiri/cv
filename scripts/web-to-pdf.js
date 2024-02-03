@@ -14,7 +14,7 @@ async function Main() {
     await page.goto(web, { waitUntil: "networkidle0" });
     await timeout(1000);
     await page.pdf({
-      path: "public/cv.pdf",
+      path: "public/UrielSpiridioneCV.pdf",
       format: "A4",
       printBackground: true,
     });
