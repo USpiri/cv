@@ -107,7 +107,7 @@ const actions = [
           <li>
             <button class="command" id={command.id}>
               <div>{command.label}</div>
-              <div class="hidden sm:block">
+              <div class="hidden text-neutral-500 sm:block">
                 {command.keys.map((key, last) => (
                   <>
                     <kbd>{key}</kbd> {!last && "+"}
