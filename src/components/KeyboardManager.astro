@@ -50,12 +50,14 @@ const actions = [
 
 <footer
   id="command"
-  class="sticky bottom-0 hidden cursor-pointer select-none items-center justify-center border-t bg-neutral-50 px-2 py-1 text-sm text-neutral-500 sm:flex"
+  class="sticky bottom-0 hidden cursor-pointer select-none items-center justify-center border-t bg-neutral-50 px-2 py-1 text-sm text-neutral-500 sm:flex print:hidden"
 >
   Press <kbd>Cmd</kbd> + <kbd>K</kbd> to open the command menu. (Or click here)
 </footer>
 
-<div class="fixed bottom-3 right-3 z-20 flex bg-neutral-50 sm:hidden">
+<div
+  class="fixed bottom-3 right-3 z-20 flex bg-neutral-50 sm:hidden print:hidden"
+>
   <Button id="command">✨</Button>
 </div>
 
