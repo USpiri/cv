@@ -1,0 +1,199 @@
+---
+import Github from "./icons/GithubIcon.astro";
+import X from "./icons/XTwitterIcon.astro";
+import Linkedin from "./icons/LinkedinIcon.astro";
+import GlobeIcon from "./icons/GlobeIcon.astro";
+import ExternalIcon from "./icons/ExternalIcon.astro";
+import Button from "./Button.astro";
+
+import user from "@cv/user.json";
+
+const SOCIAL_ICONS: Record<string, string | any> = {
+  Github,
+  Linkedin,
+  X,
+};
+
+const links = [
+  {
+    url: "https://uspiri.com/",
+    network: "Portfolio",
+    username: "Uriel Spiridione",
+  },
+  {
+    url: "https://blog.uspiri.com/",
+    network: "Blog",
+    username: "Uriel Spiridione",
+  },
+  ...user.profiles,
+];
+
+const actions = [
+  {
+    id: "print",
+    label: "🖨️ Print",
+    keys: ["Ctrl", "p"],
+  },
+  {
+    id: "theme",
+    label: "🔆 Change theme",
+    keys: ["Ctrl", "l"],
+  },
+  {
+    id: "download",
+    label: "📄 Download resume",
+
+    keys: ["Ctrl", "d"],
+  },
+];
+---
+
+<footer
+  id="command"
+  class="sticky bottom-0 hidden cursor-pointer select-none items-center justify-center border-t bg-neutral-50 px-2 py-1 text-sm text-neutral-500 sm:flex"
+>
+  Press <kbd>Cmd</kbd> + <kbd>K</kbd> to open the command menu. (Or click here)
+</footer>
+
+<div class="fixed bottom-3 right-3 z-20 flex bg-neutral-50 sm:hidden">
+  <Button id="command">✨</Button>
+</div>
+
+<dialog
+  id="commands"
+  class="w-full max-w-lg rounded-lg bg-neutral-100 backdrop:bg-neutral-500/50 focus:outline-none print:hidden"
+>
+  <header class="flex items-center justify-between px-3 py-2">
+    <h2 class="text-lg font-semibold">Command List</h2>
+    <button class="outline-none" close-dialog>X</button>
+  </header>
+  <hr />
+  <div class="flex flex-col gap-3 py-2">
+    <span class="ms-3 text-xs font-medium text-neutral-500"> Links </span>
+    <ul>
+      {
+        links.map((link) => {
+          const Icon = SOCIAL_ICONS[link.network] ?? GlobeIcon;
+          return (
+            <li>
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="command group"
+              >
+                <div class="flex items-center gap-2">
+                  <Icon class="h-4 w-4 fill-neutral-500 group-hover:fill-neutral-600" />
+                  {link.network}
+                </div>
+                <div class="rounded-md bg-neutral-200 p-0.5">
+                  <ExternalIcon class="h-3.5 w-3.5 fill-neutral-500" />
+                </div>
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+    <span class="ms-3 text-xs font-medium text-neutral-500"> Actions </span>
+    <ul>
+      {
+        actions.map((command) => (
+          <li>
+            <button class="command" id={command.id}>
+              <div>{command.label}</div>
+              <div class="hidden sm:block">
+                {command.keys.map((key, last) => (
+                  <>
+                    <kbd>{key}</kbd> {!last && "+"}
+                  </>
+                ))}
+              </div>
+            </button>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <footer class="flex items-center justify-center bg-neutral-200 px-2 text-xs">
+    <span class="hidden sm:flex">
+      Press <kbd>ESC</kbd> or <kbd>Ctrl</kbd> + <kbd>k</kbd> to close.
+    </span>
+  </footer>
+</dialog>
+
+<style>
+  kbd,
+  .kbd {
+    @apply rounded-md bg-neutral-200 px-1 py-0.5 font-mono text-xs;
+  }
+  .command {
+    @apply flex w-full items-center justify-between border-x-4 border-transparent px-3 py-2 text-sm outline-none hover:border-l-cyan-500 hover:bg-sky-300/10;
+  }
+</style>
+
+<script>
+  const commands = [
+    {
+      id: "command",
+      key: "k",
+      action: () =>
+        commandDialog.open ? commandDialog.close() : commandDialog.showModal(),
+    },
+    { id: "print", key: "p", action: () => window.print() },
+    {
+      id: "theme",
+      key: "l",
+      action: () => {
+        alert("Work in progress...");
+      },
+    },
+    {
+      id: "download",
+      key: "d",
+      action: () => {
+        var link = document.createElement("a");
+        link.setAttribute("download", "Uriel Spiridione CV");
+        link.href = "/profile.jpg";
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+      },
+    },
+  ];
+
+  for (let command of commands) {
+    const buttons = document.querySelectorAll(`#${command.id}`);
+    buttons?.forEach((button) =>
+      button.addEventListener("click", command.action),
+    );
+  }
+
+  const commandDialog = document.querySelector(
+    "#commands",
+  ) as HTMLDialogElement;
+
+  const closeButton = commandDialog.querySelector("[close-dialog]");
+  closeButton?.addEventListener("click", () => commandDialog.close());
+
+  commandDialog.addEventListener("click", (event) => {
+    const rect = commandDialog.getBoundingClientRect();
+    const isInDialog =
+      rect.top <= event.clientY &&
+      event.clientY <= rect.top + rect.height &&
+      rect.left <= event.clientX &&
+      event.clientX <= rect.left + rect.width;
+    if (!isInDialog) {
+      commandDialog.close();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    commands.forEach((command) => {
+      if (event.ctrlKey && event.key === command.key) {
+        event.preventDefault();
+        command.action();
+      }
+    });
+  });
+</script>
