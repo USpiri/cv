@@ -3,6 +3,9 @@ import GlobeIcon from "../icons/GlobeIcon.astro";
 import Contact from "./Contact.astro";
 import { Image } from "astro:assets";
 import user from "@cv/user.json";
+import Button from "@components/Button.astro";
+import FileIcon from "@components/icons/FileIcon.astro";
+import DownloadIcon from "@components/icons/DownloadIcon.astro";
 
 const { name, label, location, image } = user;
 ---
@@ -25,6 +28,22 @@ const { name, label, location, image } = user;
       </a>
     </p>
     <Contact />
+    <aside
+      class="flex gap-2 pt-2 text-xs font-medium text-neutral-500 print:hidden"
+    >
+      <Button id="print">
+        <FileIcon
+          class="inline h-4 w-4 fill-neutral-500 transition-colors group-hover:fill-neutral-700"
+        />
+        Print
+      </Button>
+      <Button id="download">
+        <DownloadIcon
+          class="inline h-5 w-5 fill-neutral-500 transition-colors group-hover:fill-neutral-700"
+        />
+        Download
+      </Button>
+    </aside>
   </div>
   <div>
     <Image
