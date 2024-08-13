@@ -8,6 +8,20 @@
       "tags": ["Angular", "Astro", "Tailwind", "SSR", "Typescript", "MDX"]
     },
     {
+      "name": "Notes",
+      "description": "🗒️ Simple and minimalist note takin app based on TipTap with custom plugins",
+      "url": "https://notes.uspiri.com/",
+      "repo": "https://github.com/USpiri/notes",
+      "tags": ["NextJS", "React", "Tailwind", "Typescript", "TipTap", "Zustand"]
+    },
+    {
+      "name": "Blog",
+      "description": "✨ My personal blogsite",
+      "url": "https://blog.uspiri.com/",
+      "repo": "https://github.com/USpiri/blog.uspiri.com",
+      "tags": ["Astro", "Tailwind", "SSR", "Typescript", "MDX"]
+    },
+    {
       "name": "Raices Nativas",
       "description": "Raíces Nativas is an exciting project in collaboration with biology students from the National University of Córdoba (UNC) to promote actively the conservation of native plant species from Córdoba, Argentina.",
       "url": "https://raices-nativas.vercel.app/",
