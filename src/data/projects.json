@@ -22,6 +22,20 @@
       "tags": ["Astro", "Tailwind", "SSR", "Typescript", "MDX"]
     },
     {
+      "name": "Maps Scrapper Extension",
+      "description": "🗺️ Scraping Google Chrome extension for Google Maps. Google Chrome extension that allows users to scrape search results from Google Maps for later use in data analysis or market research, allowing the data to be downloaded as a file .csv or .json.",
+      "url": "",
+      "repo": "https://github.com/USpiri/maps-scrapper-extension",
+      "tags": ["React", "Tailwind", "Vite", "Typescript"]
+    },
+    {
+      "name": "Users Posts",
+      "description": "💼 Users&Posts | An authentication role based app with Angular 18. Exploring the latest versions of Angular and some of its features",
+      "url": "",
+      "repo": "https://github.com/USpiri/user-posts",
+      "tags": ["Angular", "Testing", "Tailwind", "Signals"]
+    },
+    {
       "name": "Raices Nativas",
       "description": "Raíces Nativas is an exciting project in collaboration with biology students from the National University of Córdoba (UNC) to promote actively the conservation of native plant species from Córdoba, Argentina.",
       "url": "https://raices-nativas.vercel.app/",
