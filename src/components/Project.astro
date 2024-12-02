@@ -15,7 +15,7 @@ const { url, name, tags, description, repo } = Astro.props.project;
 ---
 
 <article
-  class="flex flex-col gap-2 rounded-md border px-3 py-2 print:gap-1 print:border-none print:px-0 print:py-0"
+  class="no-break flex flex-col gap-2 rounded-md border px-3 py-2 print:gap-1 print:border-none print:px-0 print:py-0"
 >
   <header class="flex flex-wrap items-center gap-2">
     <Title href={url}>{name}</Title>
@@ -54,3 +54,11 @@ const { url, name, tags, description, repo } = Astro.props.project;
     </div>
   </footer>
 </article>
+
+<style>
+  @media print {
+    .no-break {
+      break-inside: avoid;
+    }
+  }
+</style>
