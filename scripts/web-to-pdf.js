@@ -5,7 +5,7 @@ async function timeout(ms) {
 }
 
 async function Main() {
-  const web = "https://cv-uspiri.vercel.app/";
+  const web = "http://localhost:4321/";
 
   try {
     const browser = await puppeteer.launch({ headless: "new" });
