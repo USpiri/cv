@@ -1,27 +1,6 @@
 {
   "projects": [
     {
-      "name": "Notes",
-      "description": "🗒️ Simple and minimalist note takin app based on TipTap with custom plugins",
-      "url": "https://notes.uspiri.com/",
-      "repo": "https://github.com/USpiri/notes",
-      "tags": ["NextJS", "React", "Tailwind", "Typescript", "TipTap", "Zustand"]
-    },
-    {
-      "name": "Blog",
-      "description": "✨ My personal blogsite",
-      "url": "https://blog.uspiri.com/",
-      "repo": "https://github.com/USpiri/blog.uspiri.com",
-      "tags": ["Astro", "Tailwind", "SSR", "Typescript", "MDX"]
-    },
-    {
-      "name": "Maps Scrapper Extension",
-      "description": "🗺️ Scraping Google Chrome extension for Google Maps. Google Chrome extension that allows users to scrape search results from Google Maps for later use in data analysis or market research, allowing the data to be downloaded as a file .csv or .json.",
-      "url": "",
-      "repo": "https://github.com/USpiri/maps-scrapper-extension",
-      "tags": ["React", "Tailwind", "Vite", "Typescript"]
-    },
-    {
       "name": "Things Shop",
       "description": "📦 A minimalist ecommerce platform built with Next.js, featuring PayPal integration, Prisma ORM, Cloudinary image hosting, and custom authentication with role-based route protection.",
       "url": "https://thingsshop.vercel.app/",
@@ -35,6 +14,27 @@
         "Paypal",
         "AuthJS"
       ]
+    },
+    {
+      "name": "Maps Scrapper Extension",
+      "description": "🗺️ Scraping Google Chrome extension for Google Maps. Google Chrome extension that allows users to scrape search results from Google Maps for later use in data analysis or market research, allowing the data to be downloaded as a file .csv or .json.",
+      "url": "",
+      "repo": "https://github.com/USpiri/maps-scrapper-extension",
+      "tags": ["React", "Tailwind", "Vite", "Typescript"]
+    },
+    {
+      "name": "Blog",
+      "description": "✨ My personal blogsite",
+      "url": "https://blog.uspiri.com/",
+      "repo": "https://github.com/USpiri/blog.uspiri.com",
+      "tags": ["Astro", "Tailwind", "SSR", "Typescript", "MDX"]
+    },
+    {
+      "name": "Notes",
+      "description": "🗒️ Simple and minimalist note takin app based on TipTap with custom plugins",
+      "url": "https://notes.uspiri.com/",
+      "repo": "https://github.com/USpiri/notes",
+      "tags": ["NextJS", "React", "Tailwind", "Typescript", "TipTap", "Zustand"]
     },
     {
       "name": "USpiri.com",
