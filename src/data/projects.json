@@ -1,13 +1,6 @@
 {
   "projects": [
     {
-      "name": "USpiri.com",
-      "description": "Tri-web project, featuring three interconected projects. The portfolio, developed using angular 17 with Tailwind and Server-Side Rendering (SSR), dynamically loading the latest blog posts and personal information. The blog, powered by Astro, repository for my programming articles, offering a source of knowledge. Last, the CV, providing a printable PDF version, housing information embedded in the portfolio.",
-      "url": "https://uspiri.com/",
-      "repo": "https://github.com/USpiri/uspiri.com",
-      "tags": ["Angular", "Astro", "Tailwind", "SSR", "Typescript", "MDX"]
-    },
-    {
       "name": "Notes",
       "description": "🗒️ Simple and minimalist note takin app based on TipTap with custom plugins",
       "url": "https://notes.uspiri.com/",
@@ -27,6 +20,28 @@
       "url": "",
       "repo": "https://github.com/USpiri/maps-scrapper-extension",
       "tags": ["React", "Tailwind", "Vite", "Typescript"]
+    },
+    {
+      "name": "Things Shop",
+      "description": "📦 A minimalist ecommerce platform built with Next.js, featuring PayPal integration, Prisma ORM, Cloudinary image hosting, and custom authentication with role-based route protection.",
+      "url": "https://thingsshop.vercel.app/",
+      "repo": "https://github.com/USpiri/things-shop/",
+      "tags": [
+        "NextJS",
+        "Tailwind",
+        "Typescript",
+        "Prisma",
+        "Cloudinary",
+        "Paypal",
+        "AuthJS"
+      ]
+    },
+    {
+      "name": "USpiri.com",
+      "description": "Tri-web project, featuring three interconected projects. The portfolio, developed using angular 17 with Tailwind and Server-Side Rendering (SSR), dynamically loading the latest blog posts and personal information. The blog, powered by Astro, repository for my programming articles, offering a source of knowledge. Last, the CV, providing a printable PDF version, housing information embedded in the portfolio.",
+      "url": "https://uspiri.com/",
+      "repo": "https://github.com/USpiri/uspiri.com",
+      "tags": ["Angular", "Astro", "Tailwind", "SSR", "Typescript", "MDX"]
     },
     {
       "name": "Users Posts",
