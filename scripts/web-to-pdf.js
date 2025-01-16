@@ -13,6 +13,14 @@ async function Main() {
 
     await page.goto(web, { waitUntil: "networkidle0" });
     await timeout(1000);
+
+    await page.evaluate(() => {
+      const toolbar = document.querySelector("astro-dev-toolbar");
+      if (toolbar) {
+        toolbar.remove();
+      }
+    });
+
     await page.pdf({
       path: "public/UrielSpiridioneCV.pdf",
       format: "A4",
