@@ -28,6 +28,8 @@ import KeyboardManager from "@components/KeyboardManager.astro";
 <style is:global>
   .force-new-page {
     page-break-before: always;
-    @apply print:pt-16;
+    @media print {
+      padding-top: 4rem;
+    }
   }
 </style>

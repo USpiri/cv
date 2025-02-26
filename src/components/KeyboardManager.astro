@@ -51,13 +51,13 @@ const actions = [
 
 <footer
   id="command"
-  class="sticky bottom-0 hidden cursor-pointer select-none items-center justify-center border-t bg-neutral-50 px-2 py-1 text-sm text-neutral-500 sm:flex print:hidden"
+  class="sticky bottom-0 hidden cursor-pointer items-center justify-center border-t border-neutral-200 bg-neutral-50 px-2 py-1 text-sm text-neutral-500 select-none sm:flex print:hidden"
 >
   Press <kbd>Cmd</kbd> + <kbd>K</kbd> to open the command menu. (Or click here)
 </footer>
 
 <div
-  class="fixed bottom-8 right-8 z-20 flex bg-neutral-50 sm:hidden print:hidden"
+  class="fixed right-8 bottom-8 z-20 flex bg-neutral-50 sm:hidden print:hidden"
 >
   <Button id="command">
     <CommandsIcon class="h-5 w-5 fill-neutral-500" />
@@ -66,13 +66,14 @@ const actions = [
 
 <dialog
   id="commands"
-  class="w-full max-w-lg rounded-lg bg-neutral-100 backdrop:bg-neutral-500/50 focus:outline-none print:hidden"
+  class="m-auto w-full max-w-lg rounded-lg bg-neutral-100 backdrop:bg-neutral-500/50 focus:outline-hidden print:hidden"
 >
-  <header class="flex items-center justify-between px-3 py-2">
+  <header
+    class="flex items-center justify-between border-b border-neutral-300 px-3 py-2"
+  >
     <h2 class="text-lg font-semibold">Command List</h2>
-    <button class="outline-none" close-dialog>X</button>
+    <button class="text-neutral-400 outline-hidden" close-dialog>X</button>
   </header>
-  <hr />
   <div class="flex flex-col gap-3 py-2">
     <span class="ms-3 text-xs font-medium text-neutral-500"> Links </span>
     <ul>
@@ -85,7 +86,7 @@ const actions = [
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="command group"
+                class="group flex w-full items-center justify-between border-x-4 border-transparent px-3 py-2 text-sm outline-hidden hover:border-l-cyan-500 hover:bg-sky-300/10"
               >
                 <div class="flex items-center gap-2">
                   <Icon class="h-4 w-4 fill-neutral-500 group-hover:fill-neutral-600" />
@@ -105,7 +106,10 @@ const actions = [
       {
         actions.map((command) => (
           <li>
-            <button class="command" id={command.id}>
+            <button
+              class="flex w-full items-center justify-between border-x-4 border-transparent px-3 py-2 text-sm outline-hidden hover:border-l-cyan-500 hover:bg-sky-300/10"
+              id={command.id}
+            >
               <div>{command.label}</div>
               <div class="hidden text-neutral-500 sm:block">
                 {command.keys.map((key, last) => (
@@ -130,10 +134,13 @@ const actions = [
 <style>
   kbd,
   .kbd {
-    @apply rounded-md bg-neutral-200 px-1 py-0.5 font-mono text-xs;
-  }
-  .command {
-    @apply flex w-full items-center justify-between border-x-4 border-transparent px-3 py-2 text-sm outline-none hover:border-l-cyan-500 hover:bg-sky-300/10;
+    border-radius: 3px;
+    background-color: var(--color-neutral-200);
+    padding-inline: 0.25rem;
+    padding-block: 0.125rem;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    line-height: var(--text-xs--line-height);
   }
 </style>
 
@@ -170,12 +177,12 @@ const actions = [
   for (let command of commands) {
     const buttons = document.querySelectorAll(`#${command.id}`);
     buttons?.forEach((button) =>
-      button.addEventListener("click", command.action),
+      button.addEventListener("click", command.action)
     );
   }
 
   const commandDialog = document.querySelector(
-    "#commands",
+    "#commands"
   ) as HTMLDialogElement;
 
   const closeButton = commandDialog.querySelector("[close-dialog]");
