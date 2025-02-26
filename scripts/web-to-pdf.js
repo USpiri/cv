@@ -1,9 +1,5 @@
 import puppeteer from "puppeteer";
 
-async function timeout(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 async function Main() {
   const web = "http://localhost:4321/";
 
@@ -11,8 +7,7 @@ async function Main() {
     const browser = await puppeteer.launch({ headless: "new" });
     const page = await browser.newPage();
 
-    await page.goto(web, { waitUntil: "networkidle0" });
-    await timeout(1000);
+    await page.goto(web, { waitUntil: "networkidle2" });
 
     await page.evaluate(() => {
       const toolbar = document.querySelector("astro-dev-toolbar");
