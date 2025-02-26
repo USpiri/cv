@@ -1,6 +1,21 @@
 {
   "projects": [
     {
+      "name": "Nemos",
+      "description": "📝 A minimalist and customizable note-taking desktop app built with React and Tauri. Features a editor with support for custom writing like diagrams, KaTeX, code, chemical structures. The app follows a local-first approach and allows custom color schemes.",
+      "url": "https://github.com/USpiri/nemos",
+      "repo": "https://github.com/USpiri/nemos",
+      "tags": [
+        "React",
+        "Tauri",
+        "TipTap",
+        "Tailwind",
+        "Zustand",
+        "KaTeX",
+        "Mermaid"
+      ]
+    },
+    {
       "name": "Things Shop",
       "description": "📦 A minimalist ecommerce platform built with Next.js, featuring PayPal integration, Prisma ORM, Cloudinary image hosting, and custom authentication with role-based route protection.",
       "url": "https://thingsshop.vercel.app/",
@@ -23,22 +38,15 @@
       "tags": ["React", "Tailwind", "Vite", "Typescript"]
     },
     {
-      "name": "Blog",
-      "description": "✨ My personal blogsite",
-      "url": "https://blog.uspiri.com/",
-      "repo": "https://github.com/USpiri/blog.uspiri.com",
-      "tags": ["Astro", "Tailwind", "SSR", "Typescript", "MDX"]
-    },
-    {
       "name": "Notes",
-      "description": "🗒️ Simple and minimalist note takin app based on TipTap with custom plugins",
+      "description": "🗒️ Simple and minimalist note taking app based on TipTap with custom plugins",
       "url": "https://notes.uspiri.com/",
       "repo": "https://github.com/USpiri/notes",
       "tags": ["NextJS", "React", "Tailwind", "Typescript", "TipTap", "Zustand"]
     },
     {
-      "name": "USpiri.com",
-      "description": "Tri-web project, featuring three interconected projects. The portfolio, developed using angular 17 with Tailwind and Server-Side Rendering (SSR), dynamically loading the latest blog posts and personal information. The blog, powered by Astro, repository for my programming articles, offering a source of knowledge. Last, the CV, providing a printable PDF version, housing information embedded in the portfolio.",
+      "name": "Uspiri.com",
+      "description": "Tri-web project, featuring three interconected projects. The portfolio, developed using angular 17 with Tailwind and Server-Side Rendering (SSR). My personal blog, powered by Astro, repository for programming articles. Last, my CV, providing a printable PDF version.",
       "url": "https://uspiri.com/",
       "repo": "https://github.com/USpiri/uspiri.com",
       "tags": ["Angular", "Astro", "Tailwind", "SSR", "Typescript", "MDX"]
@@ -56,27 +64,6 @@
       "url": "https://raices-nativas.vercel.app/",
       "repo": "https://github.com/USpiri/raices-nativas",
       "tags": ["Angular", "Material", "Bootstrap"]
-    },
-    {
-      "name": "Devly CLI",
-      "description": " Devly CLI is an ongoing Rust-based project that assists in development process, providing valuable support for the implementation of Conventional Commits standards. Currently I use this application daily.",
-      "url": "",
-      "repo": "https://github.com/USpiri/devly",
-      "tags": ["Rust"]
-    },
-    {
-      "name": "Todo CLI",
-      "description": "An efficient command-line program crafted in Rust, dedicated to local task management.",
-      "url": "",
-      "repo": "https://github.com/USpiri/todo",
-      "tags": ["Rust"]
-    },
-    {
-      "name": "Sticky Notes",
-      "description": "Sticky Notes represents one of my initial projects developed using Angular, offering a user-friendly notes management system that facilitates organization through tables and boards.",
-      "url": "https://simple-sticky-notes.web.app/",
-      "repo": "https://github.com/USpiri/StickyNotes",
-      "tags": ["Angular", "Angular SDK", "Local Storage"]
     }
   ]
 }
