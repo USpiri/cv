@@ -1,9 +1,8 @@
 ---
+import Badge from "@components/Badge.astro";
+import Paragraph from "@components/Paragraph.astro";
+import Title from "@components/Title.astro";
 import type { Experience } from "@models/experience.interface";
-import Badge from "./Badge.astro";
-import Paragraph from "./Paragraph.astro";
-import Description from "./Description.astro";
-import Title from "./Title.astro";
 
 interface Props {
   experience: Experience;
@@ -23,10 +22,8 @@ const { url, company, startDate, endDate, description, position, remote } =
       {startDate} - {endDate}
     </span>
   </header>
-  <footer class="flex flex-col gap-0.5">
-    <Description>{position}</Description>
-    <Paragraph>
-      {description}
-    </Paragraph>
-  </footer>
+  <Paragraph class="font-medium text-neutral-700">{position}</Paragraph>
+  <Paragraph>
+    {description}
+  </Paragraph>
 </article>

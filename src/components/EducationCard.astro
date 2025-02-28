@@ -1,7 +1,7 @@
 ---
 import type { Education } from "@models/education.interface";
-import Description from "./Description.astro";
 import Title from "./Title.astro";
+import Paragraph from "./Paragraph.astro";
 
 interface Props {
   education: Education;
@@ -17,7 +17,5 @@ const { institution, startDate, endDate, course } = Astro.props.education;
       {startDate} - {endDate}
     </div>
   </header>
-  <footer>
-    <Description>{course}</Description>
-  </footer>
+  <Paragraph class="font-medium text-neutral-700">{course}</Paragraph>
 </article>
