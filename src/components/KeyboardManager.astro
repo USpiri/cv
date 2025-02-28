@@ -177,12 +177,12 @@ const actions = [
   for (let command of commands) {
     const buttons = document.querySelectorAll(`#${command.id}`);
     buttons?.forEach((button) =>
-      button.addEventListener("click", command.action)
+      button.addEventListener("click", command.action),
     );
   }
 
   const commandDialog = document.querySelector(
-    "#commands"
+    "#commands",
   ) as HTMLDialogElement;
 
   const closeButton = commandDialog.querySelector("[close-dialog]");
