@@ -1,19 +1,19 @@
 ---
 import BaseHead from "@components/layout/BaseHead.astro";
 import "../styles/styles.css";
+import { getLocaleCollection } from "@cv/getLocaleCollection";
 
-interface Props {
-  title: string;
-  description: string;
-}
-
-const { title, description } = Astro.props;
+const userData = await getLocaleCollection("user", Astro.currentLocale);
+const { name, label } = userData.data;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead
+      title={`${name} | ${label}`}
+      description={`${name} | ${label} | Curriculum vitae`}
+    />
   </head>
   <body class="bg-neutral-50 text-neutral-900">
     <slot />
