@@ -11,10 +11,6 @@ import ContactButton from "./ContactButton.astro";
 const { email, phone, phoneLabel, url, profiles, name } = user;
 
 const buttons = [
-  ...profiles.map((p) => ({
-    ...p,
-    label: `Visit ${p.username} profile on ${p.network}`,
-  })),
   {
     url: `mailto:${email}`,
     network: "Mail",
@@ -27,7 +23,10 @@ const buttons = [
     username: name,
     label: `Contact with ${phoneLabel}`,
   },
-
+  ...profiles.map((p) => ({
+    ...p,
+    label: `Visit ${p.username} profile on ${p.network}`,
+  })),
   {
     url,
     network: "Web",
