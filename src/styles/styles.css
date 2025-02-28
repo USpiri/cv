@@ -3,7 +3,7 @@
 .force-new-page {
   page-break-before: always;
   @media print {
-    padding-top: 4rem;
+    padding-top: 2rem;
   }
 }
 
