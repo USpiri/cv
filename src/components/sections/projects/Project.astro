@@ -1,0 +1,43 @@
+---
+import Badge from "@components/Badge.astro";
+import Paragraph from "@components/Paragraph.astro";
+import Title from "@components/Title.astro";
+import type { Project } from "@models/project.interface";
+import ProjectLinkButton from "./ProjectLinkButton.astro";
+
+interface Props {
+  project: Project;
+}
+
+const { url, name, tags, description, urls } = Astro.props.project;
+---
+
+<article
+  class="no-break flex flex-col gap-2 rounded-md border border-neutral-200 px-3 py-2 print:gap-1 print:border-none print:px-0 print:py-0"
+>
+  <header class="flex flex-wrap items-center gap-2">
+    <Title href={url}>{name}</Title>
+    <ul class="flex flex-wrap gap-2">
+      {
+        tags.map((tag) => (
+          <li>
+            <Badge label={tag} size="xs" />
+          </li>
+        ))
+      }
+    </ul>
+  </header>
+  <Paragraph>{description}</Paragraph>
+  <footer>
+    <div class="flex gap-2 print:hidden">
+      {
+        urls.map((link) => (
+          <ProjectLinkButton href={link} title={`Project "${name}" link`} />
+        ))
+      }
+    </div>
+    <div class="hidden print:block">
+      {urls.map((link) => <span>{link}</span>)}
+    </div>
+  </footer>
+</article>

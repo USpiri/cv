@@ -3,5 +3,5 @@ export interface Project {
   tags: string[];
   description: string;
   url?: string;
-  repo?: string;
+  urls: string[];
 }

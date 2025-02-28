@@ -1,0 +1,20 @@
+---
+import GithubIcon from "@components/icons/GithubIcon.astro";
+import GlobeIcon from "@components/icons/GlobeIcon.astro";
+import LinkButton from "@components/LinkButton.astro";
+
+interface Props {
+  href: string;
+  title: string;
+}
+
+const { href, title } = Astro.props;
+const Icon = href.includes("github") ? GithubIcon : GlobeIcon;
+---
+
+<LinkButton href={href} title={title}>
+  <span class="sr-only">{title}</span>
+  <Icon
+    class="h-4 w-4 fill-neutral-500 transition-colors group-hover:fill-neutral-700"
+  />
+</LinkButton>
