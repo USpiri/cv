@@ -1,0 +1,29 @@
+[
+  {
+    "institution": "Universidad Nacional de Córdoba (UNC)",
+    "url": "https://www.eco.unc.edu.ar/",
+    "area": "Economics",
+    "course": "Lic. Cs. Económicas",
+    "studyType": "Universitary",
+    "startDate": "2019",
+    "endDate": "Actually"
+  },
+  {
+    "institution": "Instituto Nacional de Tecnología Industrial (INTI)",
+    "url": "https://www.argentina.gob.ar/inti",
+    "area": "Web Development",
+    "course": "Full stack web developer",
+    "studyType": "Other",
+    "startDate": "2020",
+    "endDate": "2021"
+  },
+  {
+    "institution": "Instituto Salesiano Pio X",
+    "url": "https://piox.edu.ar/",
+    "area": "Economics",
+    "course": "Bachiller en Economía y Administración de empresas",
+    "studyType": "Bachelor",
+    "startDate": "2012",
+    "endDate": "2017"
+  }
+]
