@@ -1,7 +1,10 @@
 ---
-import Badge from "@components/Badge.astro";
-import Section from "@components/Section.astro";
-import { skills } from "@cv/skills.json";
+import Badge from "@/components/Badge.astro";
+import Section from "@/components/Section.astro";
+import { getLocaleCollection } from "@/data/getLocaleCollection";
+
+const skillsData = await getLocaleCollection("skills", Astro.currentLocale);
+const skills = skillsData.data;
 ---
 
 <Section title="Skills" forceNewPage>

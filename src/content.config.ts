@@ -4,7 +4,7 @@ import {
   skillsSchema,
   userSchema,
   workSchema,
-} from "@cv/schemas";
+} from "@/data/schemas";
 import { glob } from "astro/loaders";
 import { defineCollection } from "astro:content";
 

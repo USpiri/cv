@@ -1,7 +1,13 @@
 ---
-import Section from "@components/Section.astro";
-import { education } from "@cv/education.json";
+import Section from "@/components/Section.astro";
 import EducationCard from "./EducationCard.astro";
+import { getLocaleCollection } from "@/data/getLocaleCollection";
+
+const educationData = await getLocaleCollection(
+  "education",
+  Astro.currentLocale,
+);
+const education = educationData.data;
 ---
 
 <Section title="Education">

@@ -1,7 +1,10 @@
 ---
-import Paragraph from "@components/Paragraph.astro";
-import Section from "@components/Section.astro";
-import { summary } from "@cv/user.json";
+import Paragraph from "@/components/Paragraph.astro";
+import Section from "@/components/Section.astro";
+import { getLocaleCollection } from "@/data/getLocaleCollection";
+
+const userData = await getLocaleCollection("user", Astro.currentLocale);
+const { summary } = userData.data;
 ---
 
 <Section title="About">

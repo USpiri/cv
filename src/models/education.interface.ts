@@ -1,6 +1,6 @@
 export interface Education {
   institution: string;
-  url: string;
+  url?: string;
   area: string;
   course: string;
   studyType: string;

@@ -1,7 +1,7 @@
 ---
-import BaseHead from "@components/layout/BaseHead.astro";
-import "../styles/styles.css";
-import { getLocaleCollection } from "@cv/getLocaleCollection";
+import BaseHead from "@/components/layout/BaseHead.astro";
+import "@/styles/styles.css";
+import { getLocaleCollection } from "@/data/getLocaleCollection";
 
 const userData = await getLocaleCollection("user", Astro.currentLocale);
 const { name, label } = userData.data;

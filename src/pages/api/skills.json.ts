@@ -1,6 +1,7 @@
-import { skills } from "@cv/skills.json";
+import { getCollection } from "astro:content";
+
+const skillsData = await getCollection("skills");
 
 export async function GET() {
-  const data = skills;
-  return new Response(JSON.stringify(data));
+  return new Response(JSON.stringify(skillsData[0].data));
 }

@@ -1,6 +1,7 @@
-import { education } from "@cv/education.json";
+import { getCollection } from "astro:content";
+
+const educationData = await getCollection("education");
 
 export async function GET() {
-  const data = education;
-  return new Response(JSON.stringify(data));
+  return new Response(JSON.stringify(educationData[0].data));
 }

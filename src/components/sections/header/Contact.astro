@@ -1,14 +1,16 @@
 ---
-import Github from "@components/icons/GithubIcon.astro";
-import Web from "@components/icons/GlobeIcon.astro";
-import Linkedin from "@components/icons/LinkedinIcon.astro";
-import Mail from "@components/icons/MailIcon.astro";
-import Phone from "@components/icons/PhoneIcon.astro";
-import X from "@components/icons/XTwitterIcon.astro";
-import user from "@cv/user.json";
+import Github from "@/components/icons/GithubIcon.astro";
+import Web from "@/components/icons/GlobeIcon.astro";
+import Linkedin from "@/components/icons/LinkedinIcon.astro";
+import Mail from "@/components/icons/MailIcon.astro";
+import Phone from "@/components/icons/PhoneIcon.astro";
+import X from "@/components/icons/XTwitterIcon.astro";
 import ContactButton from "./ContactButton.astro";
+import { getLocaleCollection } from "@/data/getLocaleCollection";
 
-const { email, phone, phoneLabel, url, profiles, name } = user;
+const userData = await getLocaleCollection("user", Astro.currentLocale);
+const { email, phone, url, profiles, name } = userData.data;
+const phoneLabel = phone.replace(" ", "");
 
 const buttons = [
   {

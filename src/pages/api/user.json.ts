@@ -1,6 +1,7 @@
-import user from "@cv/user.json";
+import { getCollection } from "astro:content";
+
+const userData = await getCollection("user");
 
 export async function GET() {
-  const data = user;
-  return new Response(JSON.stringify(data));
+  return new Response(JSON.stringify(userData[0].data));
 }

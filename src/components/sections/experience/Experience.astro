@@ -1,13 +1,16 @@
 ---
-import { work } from "@cv/experience.json";
+import { getLocaleCollection } from "@/data/getLocaleCollection";
 import ExperienceCard from "./ExperienceCard.astro";
-import Section from "@components/Section.astro";
+import Section from "@/components/Section.astro";
+
+const workssData = await getLocaleCollection("work", Astro.currentLocale);
+const works = workssData.data;
 ---
 
 <Section title="Experience">
   <ul class="flex flex-col gap-5">
     {
-      work.map((experience) => (
+      works.map((experience) => (
         <li>
           <ExperienceCard experience={experience} />
         </li>

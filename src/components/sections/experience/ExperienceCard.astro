@@ -1,21 +1,21 @@
 ---
-import Badge from "@components/Badge.astro";
-import Paragraph from "@components/Paragraph.astro";
-import Title from "@components/Title.astro";
-import type { Experience } from "@models/experience.interface";
+import Badge from "@/components/Badge.astro";
+import Paragraph from "@/components/Paragraph.astro";
+import Title from "@/components/Title.astro";
+import type { Experience } from "@/models/experience.interface";
 
 interface Props {
   experience: Experience;
 }
 
-const { url, company, startDate, endDate, description, position, remote } =
+const { url, name, startDate, endDate, summary, position, remote } =
   Astro.props.experience;
 ---
 
 <article class="flex flex-col gap-0.5">
   <header class="flex items-center justify-between">
     <div class="flex flex-wrap items-center gap-2">
-      <Title href={url}>{company}</Title>
+      <Title href={url}>{name}</Title>
       {remote && <Badge label="Remote" size="xs" />}
     </div>
     <span class="text-sm text-neutral-500 tabular-nums">
@@ -24,6 +24,6 @@ const { url, company, startDate, endDate, description, position, remote } =
   </header>
   <Paragraph class="font-medium text-neutral-700">{position}</Paragraph>
   <Paragraph>
-    {description}
+    {summary}
   </Paragraph>
 </article>

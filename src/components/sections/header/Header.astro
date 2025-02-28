@@ -1,11 +1,12 @@
 ---
 import Contact from "./Contact.astro";
 import ActionButtons from "./ActionButtons.astro";
-import GlobeIcon from "@components/icons/GlobeIcon.astro";
+import GlobeIcon from "@/components/icons/GlobeIcon.astro";
 import { Image } from "astro:assets";
-import user from "@cv/user.json";
+import { getLocaleCollection } from "@/data/getLocaleCollection";
 
-const { name, label, location, image } = user;
+const userData = await getLocaleCollection("user", Astro.currentLocale);
+const { name, label, location, image } = userData.data;
 ---
 
 <section class="flex justify-between max-sm:flex-col sm:items-center">
@@ -30,7 +31,7 @@ const { name, label, location, image } = user;
   </div>
   <Image
     src={image}
-    alt="Uriel Spiridione profile"
+    alt={`${name} image`}
     width="130"
     height="130"
     class="rounded-lg max-sm:mx-auto max-sm:mt-4"

@@ -5,9 +5,11 @@ import Linkedin from "./icons/LinkedinIcon.astro";
 import GlobeIcon from "./icons/GlobeIcon.astro";
 import ExternalIcon from "./icons/ExternalIcon.astro";
 import Button from "./Button.astro";
-
-import user from "@cv/user.json";
 import CommandsIcon from "./icons/CommandsIcon.astro";
+import { getLocaleCollection } from "@/data/getLocaleCollection";
+
+const userData = await getLocaleCollection("user", Astro.currentLocale);
+const { profiles } = userData.data;
 
 const SOCIAL_ICONS: Record<string, string | any> = {
   Github,
@@ -26,7 +28,7 @@ const links = [
     network: "Blog",
     username: "Uriel Spiridione",
   },
-  ...user.profiles,
+  ...profiles,
 ];
 
 const actions = [

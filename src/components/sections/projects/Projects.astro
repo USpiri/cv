@@ -1,7 +1,10 @@
 ---
-import Section from "@components/Section.astro";
+import Section from "@/components/Section.astro";
 import Project from "./Project.astro";
-import { projects } from "@cv/projects.json";
+import { getLocaleCollection } from "@/data/getLocaleCollection";
+
+const projectsData = await getLocaleCollection("projects", Astro.currentLocale);
+const projects = projectsData.data;
 ---
 
 <Section title="Projects">

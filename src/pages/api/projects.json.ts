@@ -1,6 +1,6 @@
-import { projects } from "@cv/projects.json";
+import { getCollection } from "astro:content";
 
+const projectsData = await getCollection("projects");
 export async function GET() {
-  const data = projects;
-  return new Response(JSON.stringify(data));
+  return new Response(JSON.stringify(projectsData[0].data));
 }
