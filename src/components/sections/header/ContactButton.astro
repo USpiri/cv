@@ -1,0 +1,16 @@
+---
+import LinkButton from "@components/LinkButton.astro";
+
+interface Props {
+  href: string;
+  title: string;
+  label: string;
+}
+
+const { href, title, label } = Astro.props;
+---
+
+<LinkButton href={href} title={title}>
+  <span class="sr-only">{label}</span>
+  <slot name="icon" />
+</LinkButton>

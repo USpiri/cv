@@ -1,0 +1,68 @@
+---
+import Github from "@components/icons/GithubIcon.astro";
+import Web from "@components/icons/GlobeIcon.astro";
+import Linkedin from "@components/icons/LinkedinIcon.astro";
+import Mail from "@components/icons/MailIcon.astro";
+import Phone from "@components/icons/PhoneIcon.astro";
+import X from "@components/icons/XTwitterIcon.astro";
+import user from "@cv/user.json";
+import ContactButton from "./ContactButton.astro";
+
+const { email, phone, phoneLabel, url, profiles, name } = user;
+
+const buttons = [
+  ...profiles.map((p) => ({
+    ...p,
+    label: `Visit ${p.username} profile on ${p.network}`,
+  })),
+  {
+    url: `mailto:${email}`,
+    network: "Mail",
+    username: email,
+    label: `Send an email to ${email}`,
+  },
+  {
+    url: `tel:${phoneLabel}`,
+    network: "Phone",
+    username: name,
+    label: `Contact with ${phoneLabel}`,
+  },
+
+  {
+    url,
+    network: "Web",
+    username: name,
+    label: `${name} personal portfolio`,
+  },
+];
+
+const SOCIAL_ICONS: Record<string, string | any> = {
+  Github,
+  Linkedin,
+  X,
+  Phone,
+  Mail,
+  Web,
+};
+
+const iconClass =
+  "size-4 fill-neutral-500 transition-colors group-hover:fill-neutral-700";
+---
+
+<div class="flex flex-wrap items-center gap-2 print:hidden">
+  {
+    buttons.map((b) => {
+      const Icon = SOCIAL_ICONS[b.network];
+      return (
+        <ContactButton href={b.url} title={b.label} label={b.label}>
+          <Icon class={iconClass} slot="icon" />
+        </ContactButton>
+      );
+    })
+  }
+</div>
+<div class="hidden flex-col text-xs text-neutral-700 print:flex">
+  <p>{email}</p>
+  <p>{phone}</p>
+  <p>{url}</p>
+</div>

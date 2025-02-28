@@ -1,0 +1,38 @@
+---
+import Contact from "./Contact.astro";
+import ActionButtons from "./ActionButtons.astro";
+import GlobeIcon from "@components/icons/GlobeIcon.astro";
+import { Image } from "astro:assets";
+import user from "@cv/user.json";
+
+const { name, label, location, image } = user;
+---
+
+<section class="flex justify-between max-sm:flex-col sm:items-center">
+  <div>
+    <h1 class="text-2xl font-bold">{name}</h1>
+    <p class="m-0 text-sm font-medium text-neutral-500">
+      {label}
+    </p>
+    <a
+      class="group text-xs text-neutral-500 hover:underline"
+      href={location.map}
+    >
+      <GlobeIcon
+        class="inline w-4 fill-neutral-500/80 transition-transform group-hover:scale-125"
+      />
+      {location.address}
+    </a>
+    <div class="mt-2 space-y-2">
+      <Contact />
+      <ActionButtons />
+    </div>
+  </div>
+  <Image
+    src={image}
+    alt="Uriel Spiridione profile"
+    width="130"
+    height="130"
+    class="rounded-lg max-sm:mx-auto max-sm:mt-4"
+  />
+</section>
