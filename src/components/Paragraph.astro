@@ -1,11 +1,12 @@
 ---
 interface Props {
   size?: "sm" | "base";
+  class?: string;
 }
 
-const { size = "sm" } = Astro.props;
+const { size = "sm", class: className } = Astro.props;
 ---
 
-<p class={`text-pretty text-${size} leading-normal text-neutral-500`}>
+<p class={`text-${size} text-neutral-500 ${className ?? ""}`}>
   <slot />
 </p>
