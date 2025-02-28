@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+.force-new-page {
+  page-break-before: always;
+  @media print {
+    padding-top: 4rem;
+  }
+}
