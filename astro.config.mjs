@@ -5,7 +5,10 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   site: "https://cv.uspiri.com",
   base: "/",
-  integrations: [],
+  i18n: {
+    locales: ["es", "en"],
+    defaultLocale: "en",
+  },
   vite: {
     plugins: [tailwindcss()],
   },
