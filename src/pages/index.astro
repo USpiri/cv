@@ -6,20 +6,19 @@ import Experience from "@components/sections/experience/Experience.astro";
 import Education from "@components/sections/education/Education.astro";
 import Skills from "@components/sections/skills/Skills.astro";
 import Projects from "@components/sections/projects/Projects.astro";
-import KeyboardManager from "@components/KeyboardManager.astro";
+import Main from "@components/Main.astro";
 ---
 
 <Layout
   title="Uriel Spiridione | Full stack web developer"
   description="Uriel Spiridione | Full stack web developer | Curriculum vitae"
 >
-  <main class="mx-auto w-full max-w-2xl space-y-8">
+  <Main>
     <Header />
     <About />
     <Experience />
     <Education />
     <Skills />
     <Projects />
-  </main>
-  <KeyboardManager />
+  </Main>
 </Layout>
