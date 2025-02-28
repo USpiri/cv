@@ -1,11 +1,11 @@
 ---
 import Badge from "@components/Badge.astro";
-import Section from "../Section.astro";
+import Section from "@components/Section.astro";
 import { skills } from "@cv/skills.json";
 ---
 
 <Section title="Skills" forceNewPage>
-  <ul class="flex flex-wrap justify-center gap-4">
+  <ul class="flex flex-wrap justify-center space-y-2 space-x-4">
     {
       skills.map((skill) => (
         <li class="transition-all duration-100 select-none hover:scale-105">
