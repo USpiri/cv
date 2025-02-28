@@ -36,8 +36,8 @@ const { url, name, tags, description, urls } = Astro.props.project;
         ))
       }
     </div>
-    <div class="hidden print:block">
+    <p class="hidden space-x-2 text-xs print:block">
       {urls.map((link) => <span>{link}</span>)}
-    </div>
+    </p>
   </footer>
 </article>
