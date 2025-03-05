@@ -1,7 +1,10 @@
 import puppeteer from "puppeteer";
+import { defaultLang, languages as defaultLanguages } from "../src/i18n/ui.ts";
 
 // Defaul lang en = "";
-const languages = ["", "es"];
+const languages = Object.keys(defaultLanguages).map((l) =>
+  l === defaultLang ? "" : l,
+);
 
 const web = "http://localhost:4321";
 
