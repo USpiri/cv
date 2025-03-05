@@ -7,6 +7,7 @@ export const userSchema = z.object({
   email: z.string().email("Inalid email"),
   phone: z.string(),
   url: z.string().url(),
+  blog: z.string().url(),
   summary: z.string(),
   location: z.object({ address: z.string(), map: z.string().url() }),
   profiles: z.array(

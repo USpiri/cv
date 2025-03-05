@@ -11,7 +11,7 @@ import { defaultLang } from "@/i18n/ui";
 
 const userData = await getLocaleCollection("user", Astro.currentLocale);
 const currentLanguage = Astro.currentLocale;
-const { profiles, name } = userData.data;
+const { profiles, name, url, blog } = userData.data;
 
 const SOCIAL_ICONS: Record<string, string | any> = {
   Github,
@@ -19,15 +19,14 @@ const SOCIAL_ICONS: Record<string, string | any> = {
   X,
 };
 
-// TODO: get porfolio and blof links from user data
 const links = [
   {
-    url: "https://uspiri.com/",
+    url,
     network: "Portfolio",
     username: name,
   },
   {
-    url: "https://blog.uspiri.com/",
+    url: blog,
     network: "Blog",
     username: name,
   },
