@@ -18,6 +18,12 @@ const t = useTranslations(lang);
 <aside
   class="flex gap-2 text-xs font-medium text-neutral-500 *:py-1 print:hidden"
 >
+  <LinkButton href={url}>
+    <LanguagesIcon
+      class="inline size-4 text-neutral-500 transition-colors group-hover:text-neutral-700"
+    />
+    <span class="font-mono font-semibold uppercase">{currentLang}</span>
+  </LinkButton>
   <Button id="print">
     <FileIcon
       class="inline h-4 w-4 fill-neutral-500 transition-colors group-hover:fill-neutral-700"
@@ -30,10 +36,4 @@ const t = useTranslations(lang);
     />
     {t("actions.download.short")}
   </Button>
-  <LinkButton href={url}>
-    <LanguagesIcon
-      class="inline size-4 text-neutral-500 transition-colors group-hover:text-neutral-700"
-    />
-    <span class="font-mono font-semibold uppercase">{currentLang}</span>
-  </LinkButton>
 </aside>
