@@ -8,10 +8,13 @@ import Button from "./Button.astro";
 import CommandsIcon from "./icons/CommandsIcon.astro";
 import { getLocaleCollection } from "@/data/getLocaleCollection";
 import { defaultLang } from "@/i18n/ui";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 const userData = await getLocaleCollection("user", Astro.currentLocale);
 const currentLanguage = Astro.currentLocale;
 const { profiles, name, url, blog } = userData.data;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const SOCIAL_ICONS: Record<string, string | any> = {
   Github,
@@ -36,18 +39,17 @@ const links = [
 const actions = [
   {
     id: "print",
-    label: "🖨️ Print",
+    label: `🖨️ ${t("actions.print")}`,
     keys: ["Ctrl", "p"],
   },
   {
     id: "theme",
-    label: "🔆 Change theme",
+    label: `🔆 ${t("actions.theme")}`,
     keys: ["Ctrl", "l"],
   },
   {
     id: "download",
-    label: "📄 Download resume",
-
+    label: `📄 ${t("actions.download")}`,
     keys: ["Ctrl", "d"],
   },
 ];
@@ -57,7 +59,9 @@ const actions = [
   id="command"
   class="sticky bottom-0 hidden cursor-pointer items-center justify-center border-t border-neutral-200 bg-neutral-50 px-2 py-1 text-sm text-neutral-500 select-none sm:flex print:hidden"
 >
-  Press <kbd>Cmd</kbd> + <kbd>K</kbd> to open the command menu. (Or click here)
+  {t("kbd.openMessage.1")}
+  <kbd>Cmd</kbd> + <kbd>K</kbd>
+  {t("kbd.openMessage.2")}
 </footer>
 
 <div
@@ -130,7 +134,11 @@ const actions = [
   </div>
   <footer class="flex items-center justify-center bg-neutral-200 px-2 text-xs">
     <span class="hidden sm:flex">
-      Press <kbd>ESC</kbd> or <kbd>Ctrl</kbd> + <kbd>k</kbd> to close.
+      {t("kbd.closeMessage.1")}
+      <kbd>ESC</kbd>
+      {t("kbd.closeMessage.or")}
+      <kbd>Ctrl</kbd> + <kbd>k</kbd>
+      {t("kbd.closeMessage.2")}.
     </span>
   </footer>
 </dialog>
@@ -140,6 +148,7 @@ const actions = [
   .kbd {
     border-radius: 3px;
     background-color: var(--color-neutral-200);
+    margin-inline: 0.25rem;
     padding-inline: 0.25rem;
     padding-block: 0.125rem;
     font-family: var(--font-mono);

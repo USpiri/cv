@@ -6,11 +6,13 @@ import FileIcon from "@/components/icons/FileIcon.astro";
 import LinkButton from "@/components/LinkButton.astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { defaultLang } from "@/i18n/ui";
-import { getNextLanguage } from "@/i18n/utils";
+import { getLangFromUrl, getNextLanguage, useTranslations } from "@/i18n/utils";
 
 const currentLang = Astro.currentLocale;
 const nextLanguage = getNextLanguage(currentLang ?? defaultLang);
 const url = getRelativeLocaleUrl(nextLanguage, "");
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <aside
@@ -20,13 +22,13 @@ const url = getRelativeLocaleUrl(nextLanguage, "");
     <FileIcon
       class="inline h-4 w-4 fill-neutral-500 transition-colors group-hover:fill-neutral-700"
     />
-    Print
+    {t("actions.print")}
   </Button>
   <Button id="download">
     <DownloadIcon
       class="inline h-5 w-5 fill-neutral-500 transition-colors group-hover:fill-neutral-700"
     />
-    Download
+    {t("actions.download.short")}
   </Button>
   <LinkButton href={url}>
     <LanguagesIcon

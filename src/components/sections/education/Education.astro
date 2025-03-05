@@ -2,15 +2,18 @@
 import Section from "@/components/Section.astro";
 import EducationCard from "./EducationCard.astro";
 import { getLocaleCollection } from "@/data/getLocaleCollection";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 const educationData = await getLocaleCollection(
   "education",
   Astro.currentLocale,
 );
 const education = educationData.data;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Section title="Education">
+<Section title={t("education.title")}>
   <ul class="flex flex-col gap-5">
     {
       education.map((item) => (

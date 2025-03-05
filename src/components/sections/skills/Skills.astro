@@ -2,12 +2,15 @@
 import Badge from "@/components/Badge.astro";
 import Section from "@/components/Section.astro";
 import { getLocaleCollection } from "@/data/getLocaleCollection";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 const skillsData = await getLocaleCollection("skills", Astro.currentLocale);
 const skills = skillsData.data;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Section title="Skills" forceNewPage>
+<Section title={t("skills.title")} forceNewPage>
   <ul class="flex flex-wrap justify-center space-y-2 space-x-4">
     {
       skills.map((skill) => (

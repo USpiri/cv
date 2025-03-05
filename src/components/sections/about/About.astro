@@ -2,12 +2,15 @@
 import Paragraph from "@/components/Paragraph.astro";
 import Section from "@/components/Section.astro";
 import { getLocaleCollection } from "@/data/getLocaleCollection";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 const userData = await getLocaleCollection("user", Astro.currentLocale);
 const { summary } = userData.data;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Section title="About">
+<Section title={t("about.title")}>
   <Paragraph size="sm">
     {summary}
   </Paragraph>

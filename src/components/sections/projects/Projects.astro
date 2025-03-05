@@ -2,12 +2,15 @@
 import Section from "@/components/Section.astro";
 import Project from "./Project.astro";
 import { getLocaleCollection } from "@/data/getLocaleCollection";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 const projectsData = await getLocaleCollection("projects", Astro.currentLocale);
 const projects = projectsData.data;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Section title="Projects">
+<Section title={t("projects.title")}>
   <ul class="flex flex-col gap-5">
     {
       projects.map((project) => (

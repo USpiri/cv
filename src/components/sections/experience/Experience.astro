@@ -2,12 +2,15 @@
 import { getLocaleCollection } from "@/data/getLocaleCollection";
 import ExperienceCard from "./ExperienceCard.astro";
 import Section from "@/components/Section.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 const workssData = await getLocaleCollection("work", Astro.currentLocale);
 const works = workssData.data;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Section title="Experience">
+<Section title={t("experience.title")}>
   <ul class="flex flex-col gap-5">
     {
       works.map((experience) => (
