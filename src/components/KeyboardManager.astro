@@ -7,9 +7,11 @@ import ExternalIcon from "./icons/ExternalIcon.astro";
 import Button from "./Button.astro";
 import CommandsIcon from "./icons/CommandsIcon.astro";
 import { getLocaleCollection } from "@/data/getLocaleCollection";
+import { defaultLang } from "@/i18n/ui";
 
 const userData = await getLocaleCollection("user", Astro.currentLocale);
-const { profiles } = userData.data;
+const currentLanguage = Astro.currentLocale;
+const { profiles, name } = userData.data;
 
 const SOCIAL_ICONS: Record<string, string | any> = {
   Github,
@@ -17,16 +19,17 @@ const SOCIAL_ICONS: Record<string, string | any> = {
   X,
 };
 
+// TODO: get porfolio and blof links from user data
 const links = [
   {
     url: "https://uspiri.com/",
     network: "Portfolio",
-    username: "Uriel Spiridione",
+    username: name,
   },
   {
     url: "https://blog.uspiri.com/",
     network: "Blog",
-    username: "Uriel Spiridione",
+    username: name,
   },
   ...profiles,
 ];
@@ -146,7 +149,8 @@ const actions = [
   }
 </style>
 
-<script>
+<script define:vars={{ currentLanguage, defaultLang, userName: name }} is:inline
+>
   const commands = [
     {
       id: "command",
@@ -167,8 +171,11 @@ const actions = [
       key: "d",
       action: () => {
         var link = document.createElement("a");
-        link.setAttribute("download", "Uriel Spiridione CV");
-        link.href = "/UrielSpiridioneCV.pdf";
+        link.setAttribute(
+          "download",
+          `${userName.replace(" ", "-")}-cv-${currentLanguage}`,
+        );
+        link.href = `/cv${currentLanguage !== defaultLang ? `-${currentLanguage}` : ""}.pdf`;
         document.body.appendChild(link);
         link.click();
         link.remove();
@@ -183,9 +190,7 @@ const actions = [
     );
   }
 
-  const commandDialog = document.querySelector(
-    "#commands",
-  ) as HTMLDialogElement;
+  const commandDialog = document.querySelector("#commands");
 
   const closeButton = commandDialog.querySelector("[close-dialog]");
   closeButton?.addEventListener("click", () => commandDialog.close());
