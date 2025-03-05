@@ -8,7 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "generate-pdf": "node ./scripts/web-to-pdf.js && devly commit"
+    "generate-pdf": "node --experimental-strip-types .\\scripts\\web-to-pdf.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.9",
