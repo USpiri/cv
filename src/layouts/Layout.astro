@@ -3,6 +3,7 @@ import BaseHead from "@/components/layout/BaseHead.astro";
 import "@/styles/styles.css";
 import { getLocaleCollection } from "@/data/getLocaleCollection";
 import { defaultLang } from "@/i18n/ui";
+import { ClientRouter } from "astro:transitions";
 
 const lang = Astro.currentLocale ?? defaultLang;
 const userData = await getLocaleCollection("user", Astro.currentLocale);
@@ -16,8 +17,9 @@ const { name, label } = userData.data;
       title={`${name} | ${label}`}
       description={`${name} | ${label} | Curriculum vitae`}
     />
+    <ClientRouter />
   </head>
-  <body class="bg-neutral-50 text-neutral-900">
+  <body class="bg-neutral-50 text-neutral-900" transition:animate="slide">
     <slot />
   </body>
 </html>
