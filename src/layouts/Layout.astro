@@ -2,13 +2,15 @@
 import BaseHead from "@/components/layout/BaseHead.astro";
 import "@/styles/styles.css";
 import { getLocaleCollection } from "@/data/getLocaleCollection";
+import { defaultLang } from "@/i18n/ui";
 
+const lang = Astro.currentLocale ?? defaultLang;
 const userData = await getLocaleCollection("user", Astro.currentLocale);
 const { name, label } = userData.data;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <BaseHead
       title={`${name} | ${label}`}
