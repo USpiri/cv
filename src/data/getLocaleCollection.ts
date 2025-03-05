@@ -1,3 +1,4 @@
+import { defaultLang } from "@/i18n/ui";
 import { getCollection } from "astro:content";
 import type { CollectionKey } from "astro:content";
 
@@ -6,5 +7,5 @@ export const getLocaleCollection = async <T extends CollectionKey>(
   lang?: string,
 ) => {
   const data = await getCollection(collection);
-  return data.find((u) => u.id.includes(lang ?? "en"))!;
+  return data.find((u) => u.id.includes(lang ?? defaultLang))!;
 };
