@@ -36,7 +36,7 @@
   },
   {
     "name": "🌎 Maps Scrapper Extension",
-    "description": "Extensión de Google Chrome para extraer resultados de búsqueda de Google Maps, habilitando la exportación de deatos en formatos CSV o JSON para el análisis e investigación.",
+    "description": "Extensión de Google Chrome para extraer resultados de búsqueda de Google Maps, habilitando la exportación de datos en formatos CSV o JSON para el análisis e investigación.",
     "urls": ["https://github.com/USpiri/maps-scrapper-extension"],
     "tags": ["React", "Tailwind", "Vite", "Typescript"],
     "highlights": []
@@ -54,7 +54,7 @@
     "highlights": []
   },
   {
-    "name": "🌿 Raices Nativas",
+    "name": "🌿 Raíces Nativas",
     "description": "Aplicación web en colaboración con estudiantes de biología de la Universidad Nacional de Córdoba para promover la conservación de plantas nativas de la región.",
     "url": "https://raices-nativas.vercel.app/",
     "urls": [
