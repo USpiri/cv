@@ -5,7 +5,8 @@ import LanguagesIcon from "@/components/icons/LanguagesIcon.astro";
 import FileIcon from "@/components/icons/FileIcon.astro";
 import LinkButton from "@/components/LinkButton.astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
-import { defaultLang, getNextLanguage } from "@/i18n/ui";
+import { defaultLang } from "@/i18n/ui";
+import { getNextLanguage } from "@/i18n/utils";
 
 const currentLang = Astro.currentLocale;
 const nextLanguage = getNextLanguage(currentLang ?? defaultLang);
@@ -31,6 +32,6 @@ const url = getRelativeLocaleUrl(nextLanguage, "");
     <LanguagesIcon
       class="inline size-4 text-neutral-500 transition-colors group-hover:text-neutral-700"
     />
-    <span class="uppercase">{currentLang}</span>
+    <span class="font-mono font-semibold uppercase">{currentLang}</span>
   </LinkButton>
 </aside>
