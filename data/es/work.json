@@ -1,5 +1,16 @@
 [
   {
+    "name": "Honra.io",
+    "position": "Desarrollador Full Stack",
+    "summary": "Responsable de desarrollar y mantener las aplicaciones de la empresa.",
+    "location": "Remote",
+    "url": "https://www.honra.io/",
+    "startDate": "2025",
+    "endDate": "Present",
+    "remote": true,
+    "highlights": []
+  },
+  {
     "name": "Nenes/Notimation",
     "position": "Angular Developer → Lead Angular Developer",
     "summary": "Liderazgo de un equipo de desarrollo Angular, gestionando proyectos y creando aplicaciones web con Angular, Material, PrimeNG, Bootstrap y Tailwind. Encabezando el desarrollo de un proyecto basado en Astro para mejorar el flujo de trabajo y documentación de la empresa.",

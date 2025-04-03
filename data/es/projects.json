@@ -65,10 +65,14 @@
     "highlights": []
   },
   {
-    "name": "💼 Users Posts",
-    "description": "Aplicación de autenticación basada en roles que explora las nuevas funciones de Angular.",
-    "urls": ["https://github.com/USpiri/user-posts"],
-    "tags": ["Angular", "Testing", "Tailwind", "Signals"],
+    "name": "💰 Financy",
+    "description": "Aplicación de seguimiento de gastos minimalista, con React 19 y Express. Con usuarios, transacciones, gráficos, tablas y sistemas de filtrado con Prisma.",
+    "url": "https://financy-app-theta.vercel.app/",
+    "urls": [
+      "https://financy-app-theta.vercel.app/",
+      "https://github.com/USpiri/financy"
+    ],
+    "tags": ["React", "Express", "Prisma", "Tailwind", "Zustand"],
     "highlights": []
   },
   {
